@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>fileTypes</key>
+	<array>
+		<string>hlsl</string>
+	</array>
+	<key>name</key>
+	<string>High Level SL</string>
+	<key>patterns</key>
+	<array>
+		<dict>
+			<key>begin</key>
+			<string>//</string>
+			<key>end</key>
+			<string>$</string>
+			<key>name</key>
+			<string>comment.line.double-slash.hlsl</string>
+		</dict>
+		<dict>
+			<key>begin</key>
+			<string>/\*</string>
+			<key>beginCaptures</key>
+			<dict>
+				<key>0</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.comment.hlsl</string>
+				</dict>
+			</dict>
+			<key>end</key>
+			<string>\*/</string>
+			<key>endCaptures</key>
+			<dict>
+				<key>0</key>
+				<dict>
+					<key>name</key>
+					<string>comment.block.hlsl</string>
+				</dict>
+			</dict>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>Numeric constants</string>
+			<key>match</key>
+			<string>\b([0-9]+\.?[0-9]*)|(\.[0-9]+)\b</string>
+			<key>name</key>
+			<string>constant.numeric.hlsl</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>Language constants</string>
+			<key>match</key>
+			<string>\b(false|FALSE|NULL|true|TRUE)\b</string>
+			<key>name</key>
+			<string>constant.language.hlsl</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>Preprocessor directives</string>
+			<key>match</key>
+			<string>^\s*#\s*(define|elif|else|endif|error|if|ifdef|ifndef|include|line|pragma|undef)\b</string>
+			<key>name</key>
+			<string>keyword.control.hlsl</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>Basic control keywords</string>
+			<key>match</key>
+			<string>\b(break|continue|discard|do|for|if|return|switch|while)\b</string>
+			<key>name</key>
+			<string>keyword.control.hlsl</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>Basic types</string>
+			<key>match</key>
+			<string>\b(bool|double|dword|float|half|int|min10float|min16float|min12int|min16int|min16uint|struct|uint|void)\b</string>
+			<key>name</key>
+			<string>storage.type.scalar.hlsl</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>Vector forms of scalar types</string>
+			<key>match</key>
+			<string>\b(double1|double2|double3|double4|float1|float2|float3|float4|half1|half2|half3|half4|int1|int2|int3|int4|uint1|uint2|uint3|uint4)\b</string>
+			<key>name</key>
+			<string>storage.type.vector.hlsl</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>Matrix forms of scalar types</string>
+			<key>match</key>
+			<string>\b(double1x1|double1x2|double1x3|double1x4|double2x1|double2x2|double2x3|double2x4|double3x1|double3x2|double3x3|double3x4|double4x1|double4x2|double4x3|double4x4|float1x1|float1x2|float1x3|float1x4|float2x1|float2x2|float2x3|float2x4|float3x1|float3x2|float3x3|float3x4|float4x1|float4x2|float4x3|float4x4|half1x1|half1x2|half1x3|half1x4|half2x1|half2x2|half2x3|half2x4|half3x1|half3x2|half3x3|half3x4|half4x1|half4x2|half4x3|half4x4|int1x1|int1x2|int1x3|int1x4|int2x1|int2x2|int2x3|int2x4|int3x1|int3x2|int3x3|int3x4|int4x1|int4x2|int4x3|int4x4|uint1x1|uint1x2|uint1x3|uint1x4|uint2x1|uint2x2|uint2x3|uint2x4|uint3x1|uint3x2|uint3x3|uint3x4|uint4x1|uint4x2|uint4x3|uint4x4)\b</string>
+			<key>name</key>
+			<string>storage.type.matrix.hlsl</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>Float type modifier</string>
+			<key>match</key>
+			<string>\b(snorm|unorm)\b</string>
+			<key>name</key>
+			<string>storage.type.float.modifier.hlsl</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>Sampler types</string>
+			<key>match</key>
+			<string>\b(sampler|sampler1D|sampler2D|sampler3D|SamplerComparisonState|samplerCUBE|sampler_state|SamplerState)\b</string>
+			<key>name</key>
+			<string>storage.type.sampler.hlsl</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>Direct3D 9 Texture keyword</string>
+			<key>match</key>
+			<string>\b(Texture)\b</string>
+			<key>name</key>
+			<string>keyword.sampler.texture.hlsl</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>Sampler state members</string>
+			<key>match</key>
+			<string>\b(AddressU|AddressV|AddressW|BorderColor|Filter|MaxAnisotropy|MaxLOD|MinLOD|MipLODBias)\b</string>
+			<key>name</key>
+			<string>variable.other.sampler.state.hlsl</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>Sampler comparison state members</string>
+			<key>match</key>
+			<string>\b(ComparisonFunc|ComparisonFilter)\b</string>
+			<key>name</key>
+			<string>variable.other.sampler-comparison.state.hlsl</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>Texture types</string>
+			<key>match</key>
+			<string>\b(texture|Texture1D|Texture1DArray|Texture2D|Texture2DArray|Texture3D|TextureCube)\b</string>
+			<key>name</key>
+			<string>storage.type.texture.hlsl</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>Intrinsic functions</string>
+			<key>match</key>
+			<string>\b(abort|abs|acos|all|AllMemoryBarrier|AllMemoryBarrierWithGroupSync|any|asdouble|asfloat|asin|asint|asuint|atan|atan2|ceil|clamp|clip|cos|cosh|countbits|cross|D3DCOLORtoUBYTE4|ddx|ddx_coarse|ddx_fine|ddy|ddy_coarse|ddy_fine|degrees|determinant|DeviceMemoryBarrier|DeviceMemoryBarrierWithGroupSync|distance|dot|dst|errorf|EvaluateAttributeAtCentroid|EvaluateAttributeAtSample|EvaluateAttributeSnapped|exp|exp2|f16tof32|f32tof16|faceforward|firstbithigh|firstbitlow|floor|fma|fmod|frac|frexp|fwidth|GetRenderTargetSampleCount|GetRenderTargetSamplePosition|GroupMemoryBarrier|GroupMemoryBarrierWithGroupSync|InterlockedAdd|InterlockedAnd|InterlockedCompareExchange|InterlockedCompareStore|InterlockedExchange|InterlockedMax|InterlockedMin|InterlockedOr|InterlockedXor|isfinite|isinf|isnan|ldexp|length|lerp|lit|log|log10|log2|mad|max|min|modf|msad4|mul|noise|normalize|pow|printf|Process2DQuadTessFactorsAvg|Process2DQuadTessFactorsMax|Process2DQuadTessFactorsMin|ProcessIsolineTessFactors|ProcessQuadTessFactorsAvg|ProcessQuadTessFactorsMax|ProcessQuadTessFactorsMin|ProcessTriTessFactorsAvg|ProcessTriTessFactorsMax|ProcessTriTessFactorsMin|radians|rcp|reflect|refract|reversebits|round|rsqrt|saturate|sign|sin|sincos|sinh|smoothstep|sqrt|step|tan|tanh|tex1D|tex1Dbias|tex1Dgrad|tex1Dlod|tex1Dproj|tex2D|tex2Dbias|tex2Dgrad|tex2Dlod|tex2Dproj|tex3D|tex3Dbias|tex3Dgrad|tex3Dlod|tex3Dproj|texCUBE|texCUBEbias|texCUBEgrad|texCUBElod|texCUBEproj|transpose|trunc)\b</string>
+			<key>name</key>
+			<string>keyword.function.intrinsic.hlsl</string>
+		</dict>
+	</array>
+	<key>scopeName</key>
+	<string>source.hlsl</string>
+	<key>uuid</key>
+	<string>79f67826-5bc3-4067-a1d5-46e7ffe52919</string>
+</dict>
+</plist>

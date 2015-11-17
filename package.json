@@ -1,0 +1,97 @@
+{
+	"name": "shader",
+	"displayName": "Shader languages support for VS Code",
+	"description": "Syntax highlighter for shader language (hlsl, glsl, cg) ",
+	"version": "0.1.0",
+	"publisher": "slevesque",
+	"categories": [
+		"Languages"
+	],
+	"license": "SEE LICENSE IN LICENSE.md",
+	"icon": "icon.png",
+	"bugs": {
+		"url": "https://github.com/stef-levesque/vscode-shader/issues"
+	},
+	"homepage": "https://github.com/stef-levesque/vscode-shader/blob/master/README.md",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/stef-levesque/vscode-shader.git"
+	},
+	"galleryBanner": {
+		"color": "#5c2d91",
+		"theme": "dark"
+	},
+	"engines": {
+		"vscode": "0.10.x"
+	},
+	"keywords": [
+		"shader",
+		"hlsl",
+		"glsl",
+		"Cg"
+	],
+	"contributes": {
+		"languages": [
+			{
+				"id": "hlsl",
+				"aliases": [
+					"HLSL",
+					"High-Level Shading Language",
+					"hlsl"
+				],
+				"extensions": [
+					".fx",
+					".fxh",
+					".hlsl",
+					".hlsli",
+					".psh",
+					".vsh",
+					".sf"
+				]
+			},
+			{
+				"id": "glsl",
+				"aliases": [
+					"GLSL",
+					"OpenGL Shading Language",
+					"glsl"
+				],
+				"extensions": [
+					".vert",
+					".frag",
+					".glsl",
+					".glslv",
+					".glslf"
+				]
+			},
+			{
+				"id": "cg",
+				"aliases": [
+					"Cg",
+					"C for Graphics",
+					"cg"
+				],
+				"extensions": [
+					".cg"
+				]
+			}
+		],
+		"grammars": [
+			{
+				"language": "hlsl",
+				"scopeName": "source.hlsl",
+				"path": "./syntaxes/hlsl.tmLanguage"
+			},
+			{
+				"language": "glsl",
+				"scopeName": "source.glsl",
+				"path": "./syntaxes/glsl.tmLanguage"
+			},
+			{
+				"language": "cg",
+				"scopeName": "source.cg",
+				"path": "./syntaxes/cg.tmLanguage"
+			}
+		]
+	}
+}

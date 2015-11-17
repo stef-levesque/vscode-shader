@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>fileTypes</key>
+	<array>
+		<string>glsl</string>
+		<string>frag</string>
+		<string>vert</string>
+	</array>
+	<key>name</key>
+	<string>OpenGL SL</string>
+	<key>patterns</key>
+	<array>
+		<dict>
+			<key>begin</key>
+			<string>//</string>
+			<key>end</key>
+			<string>$</string>
+			<key>name</key>
+			<string>comment.line.double-slash.glsl</string>
+		</dict>
+		<dict>
+			<key>begin</key>
+			<string>/\*</string>
+			<key>beginCaptures</key>
+			<dict>
+				<key>0</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.comment.glsl</string>
+				</dict>
+			</dict>
+			<key>end</key>
+			<string>\*/</string>
+			<key>endCaptures</key>
+			<dict>
+				<key>0</key>
+				<dict>
+					<key>name</key>
+					<string>comment.block.glsl</string>
+				</dict>
+			</dict>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>Numeric constants</string>
+			<key>match</key>
+			<string>\b(((0(x|X)[0-9a-fA-F]*)|(([0-9]+\.?[0-9]*)|(\.[0-9]+))((e|E)(\+|-)?[0-9]+)?)(F|f|lf|LF)?)\b</string>
+			<key>name</key>
+			<string>constant.numeric.glsl</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>Language constants</string>
+			<key>match</key>
+			<string>\b(false|true)\b</string>
+			<key>name</key>
+			<string>constant.language.glsl</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>Preprocessor directives</string>
+			<key>match</key>
+			<string>^\s*#\s*(define|undef|if|ifdef|ifndef|else|elif|endif|error|pragma|extension|version|line)\b</string>
+			<key>name</key>
+			<string>keyword.control.glsl</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>Basic control keywords</string>
+			<key>match</key>
+			<string>\b(break|case|continue|default|do|else|for|if|return|switch|while)\b</string>
+			<key>name</key>
+			<string>keyword.control.glsl</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>Basic types</string>
+			<key>match</key>
+			<string>\b(bool|double|float|int|uint|void)\b</string>
+			<key>name</key>
+			<string>storage.type.glsl</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>Vector types</string>
+			<key>match</key>
+			<string>\b(bvec2|bvec3|bvec4|dvec2|dvec3|dvec4|ivec2|ivec3|ivec4|uvec2|uvec3|uvec4|vec2|vec3|vec4)\b</string>
+			<key>name</key>
+			<string>storage.type.vector.glsl</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>Matrix types</string>
+			<key>match</key>
+			<string>\b(dmat2|dmat2x2|dmat2x3|dmat2x4|dmat3|dmat3x2|dmat3x3|dmat3x4|dmat4|dmat4x2|dmat4x3|dmat4x4|mat2|mat2x2|mat2x3|mat2x4|mat3|mat3x2|mat3x3|mat3x4|mat4|mat4x2|mat4x3|mat4x4)\b</string>
+			<key>name</key>
+			<string>storage.type.matrix.glsl</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>Floating point opaque types</string>
+			<key>match</key>
+			<string>\b(image1D|image1DArray|image2D|image2DArray|image2DMS|image2DMSArray|image2DRect|image3D|imageBuffer|imageCube|imageCubeArray|sampler1D|sampler1DArray|sampler1DArrayShadow|sampler1DShadow|sampler2D|sampler2DArray|sampler2DMS|sampler2DMSArray|sampler2DArrayShadow|sampler2DRect|sampler2DRectShadow|sampler2DShadow|sampler3D|samplerBuffer|samplerCube|samplerCubeArray|samplerCubeArrayShadow|samplerCubeShadow)\b</string>
+			<key>name</key>
+			<string>storage.type.float.opaque.glsl</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>Signed integer opaque types</string>
+			<key>match</key>
+			<string>\b(iimage1D|iimage1DArray|iimage2D|iimage2DArray|iimage2DMS|iimage2DMSArray|iimage2DRect|iimage3D|iimageBuffer|iimageCube|iimageCubeArray|isampler1D|isampler1DArray|isampler2D|isampler2DArray|isampler2DMS|isampler2DMSArray|isampler2DRect|isampler3D|isamplerBuffer|isamplerCube|isamplerCubeArray)\b</string>
+			<key>name</key>
+			<string>storage.type.integer.signed.opaque.glsl</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>Unsigned integer opaque types</string>
+			<key>match</key>
+			<string>\b(atomic_uint|uimage1D|uimage1DArray|uimage2D|uimage2DArray|uimage2DMS|uimage2DMSArray|uimage2DRect|uimage3D|uimageBuffer|uimageCube|uimageCubeArray|usampler1D|usampler1DArray|usampler2D|usampler2DArray|usampler2DMS|usampler2DMSArray|usampler2DRect|usampler3D|usamplerBuffer|usamplerCube|usamplerCubeArray)\b</string>
+			<key>name</key>
+			<string>storage.type.integer.unsigned.opaque.glsl</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>Storage qualifiers</string>
+			<key>match</key>
+			<string>\b(attribute|const|in|out|uniform|varying)\b</string>
+			<key>name</key>
+			<string>storage.modifier.glsl</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>Auxiliary storage qualifiers</string>
+			<key>match</key>
+			<string>\b(centroid|patch|sample)\b</string>
+			<key>name</key>
+			<string>storage.modifier.auxiliary.glsl</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>Interpolation qualifiers</string>
+			<key>match</key>
+			<string>\b(flat|noperspective|smooth)\b</string>
+			<key>name</key>
+			<string>storage.modifier.interpolation.glsl</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>Parameter qualifiers</string>
+			<key>match</key>
+			<string>\b(const|in|inout|out)\b</string>
+			<key>name</key>
+			<string>storage.modifier.parameter.glsl</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>Precision qualifiers</string>
+			<key>match</key>
+			<string>\b(highp|lowp|mediump|precision)\b</string>
+			<key>name</key>
+			<string>storage.modifier.precision.glsl</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>Memory qualifiers</string>
+			<key>match</key>
+			<string>\b(coherent|volatile|restrict|readonly|writeonly)\b</string>
+			<key>name</key>
+			<string>storage.modifier.memory.glsl</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>Reserved keywords</string>
+			<key>match</key>
+			<string>\b(active|asm|cast|class|common|enum|extern|external|filter|fixed|fvec2|fvec3|fvec4|goto|half|hvec2|hvec3|hvec4|inline|input|interface|long|namespace|noinline|output|packed|partition|public|resource|row_major|sampler3DRect|short|sizeof|static|superp|template|this|typedef|union|unsigned|using)\b</string>
+			<key>name</key>
+			<string>invalid.illegal.reserved.keyword</string>
+		</dict>
+	</array>
+	<key>scopeName</key>
+	<string>source.glsl</string>
+	<key>uuid</key>
+	<string>18a341e4-25c1-4246-a5ee-a248e33effc4</string>
+</dict>
+</plist>
