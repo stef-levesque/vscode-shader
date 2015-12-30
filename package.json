@@ -7,7 +7,7 @@
 	"categories": [
 		"Languages"
 	],
-	"license": "SEE LICENSE IN LICENSE.md",
+	"license": "LICENSE.md",
 	"icon": "icon.png",
 	"bugs": {
 		"url": "https://github.com/stef-levesque/vscode-shader/issues"
@@ -22,7 +22,7 @@
 		"theme": "dark"
 	},
 	"engines": {
-		"vscode": "0.10.x"
+		"vscode": "^0.10.1"
 	},
 	"keywords": [
 		"shader",
@@ -47,7 +47,8 @@
 					".psh",
 					".vsh",
 					".sf"
-				]
+				],
+				"configuration": "./hlsl.configuration.json"
 			},
 			{
 				"id": "glsl",
@@ -57,12 +58,17 @@
 					"glsl"
 				],
 				"extensions": [
+					".vs",
+					".fs",
+					".gs",
 					".vert",
 					".frag",
+					".geom",
 					".glsl",
 					".glslv",
 					".glslf"
-				]
+				],
+				"configuration": "./glsl.configuration.json"
 			},
 			{
 				"id": "cg",
@@ -73,7 +79,8 @@
 				],
 				"extensions": [
 					".cg"
-				]
+				],
+				"configuration": "./cg.configuration.json"
 			}
 		],
 		"grammars": [
