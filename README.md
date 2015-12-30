@@ -7,10 +7,12 @@ Syntax highlighter for shader languages
 
 ## Installation
 
-Simply copy the files to your vscode **extensions** folder
-* **Windows** `%USERPROFILE%\.vscode\extensions`
-* **Mac** `$HOME/.vscode/extensions`
-* **Linux** `$HOME/.vscode/extensions`
+1. Install *Visual Studio Code* (0.10.1 or higher)
+2. Launch *Code*
+3. From the command palette `Ctrl-Shift-P` (Windows, Linux) or `Cmd-Shift-P` (OSX)
+4. Select `Install Extension`
+5. Choose the extension `Shader languages support for VS Code`
+6. Reload *Visual Studio Code*
 
 ## Contributing
 
