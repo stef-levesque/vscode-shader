@@ -1,5 +1,7 @@
 # vscode-shader
 
+[![Join the chat at https://gitter.im/stef-levesque/vscode-shader](https://badges.gitter.im/stef-levesque/vscode-shader.svg)](https://gitter.im/stef-levesque/vscode-shader?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 Syntax highlighter for shader languages
 * `HSLS` - High-Level Shading Language
 * `GLSL` - OpenGL Shading Language
