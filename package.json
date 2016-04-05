@@ -2,7 +2,7 @@
 	"name": "shader",
 	"displayName": "Shader languages support for VS Code",
 	"description": "Syntax highlighter for shader language (hlsl, glsl, cg) ",
-	"version": "0.2.0",
+	"version": "0.2.1",
 	"publisher": "slevesque",
 	"categories": [
 		"Languages"
