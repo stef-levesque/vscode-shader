@@ -21,24 +21,10 @@
 		<dict>
 			<key>begin</key>
 			<string>/\*</string>
-			<key>beginCaptures</key>
-			<dict>
-				<key>0</key>
-				<dict>
-					<key>name</key>
-					<string>punctuation.definition.comment.hlsl</string>
-				</dict>
-			</dict>
 			<key>end</key>
 			<string>\*/</string>
-			<key>endCaptures</key>
-			<dict>
-				<key>0</key>
-				<dict>
-					<key>name</key>
-					<string>comment.block.hlsl</string>
-				</dict>
-			</dict>
+			<key>name</key>
+			<string>comment.block.hlsl</string>
 		</dict>
 		<dict>
 			<key>comment</key>
@@ -103,6 +89,14 @@
 			<string>\b(snorm|unorm)\b</string>
 			<key>name</key>
 			<string>storage.type.float.modifier.hlsl</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>Storage, type, function argument and struct interpolation modifiers</string>
+			<key>match</key>
+			<string>\b(inline|(extern|precise|shared|groupshared|packoffset|register|snorm|static|uniform|unorm|volatile)|(const|row_major|column_major)|(in|inout|out)|(centroid|linear|nointerpolation|noperspective|sample))\b</string>
+			<key>name</key>
+			<string>storage.modifier.hlsl</string>
 		</dict>
 		<dict>
 			<key>comment</key>
