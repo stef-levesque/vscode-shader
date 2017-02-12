@@ -35,10 +35,58 @@
 	<key>patterns</key>
 	<array>
 		<dict>
-			<key>match</key>
-			<string>^\s*#\s*(define|undef|if|ifdef|ifndef|else|elif|endif|error|pragma|extension|version|line)\b</string>
+			<key>begin</key>
+			<string>//</string>
+			<key>end</key>
+			<string>$</string>
 			<key>name</key>
-			<string>keyword.directive.preprocessor.glsl</string>
+			<string>comment.line.double-slash.hlsl</string>
+		</dict>
+		<dict>
+			<key>begin</key>
+			<string>/\*</string>
+			<key>end</key>
+			<string>\*/</string>
+			<key>name</key>
+			<string>comment.block.hlsl</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>Numeric constants</string>
+			<key>match</key>
+			<string>\b([0-9]+\.?[0-9]*)|(\.[0-9]+)\b</string>
+			<key>name</key>
+			<string>constant.numeric.hlsl</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>Language constants</string>
+			<key>match</key>
+			<string>\b(false|FALSE|NULL|true|TRUE)\b</string>
+			<key>name</key>
+			<string>constant.language.hlsl</string>
+		</dict>
+		<dict>
+			<key>begin</key>
+			<string>^\s*#\s*(define|defined|elif|else|if|ifdef|ifndef|endif|line|pragma|extension|version|error|include|undef)\b</string>
+			<key>captures</key>
+			<dict>
+				<key>name</key>
+				<string>keyword.control.hlsl</string>
+			</dict>
+			<key>end</key>
+			<string>(?=(?://|/\*))|$</string>
+			<key>name</key>
+			<string>keyword.control.hlsl</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>match</key>
+					<string>(?&gt;\\\s*\n)</string>
+					<key>name</key>
+					<string>keyword.control.hlsl</string>
+				</dict>
+			</array>
 		</dict>
 		<dict>
 			<key>match</key>
