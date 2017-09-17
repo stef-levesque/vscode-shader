@@ -2,7 +2,7 @@
 
 [![GitHub issues](https://img.shields.io/github/issues/stef-levesque/vscode-shader.svg)](https://github.com/stef-levesque/vscode-shader/issues)
 [![GitHub license button](https://img.shields.io/github/license/stef-levesque/vscode-shader.svg)](https://github.com/stef-levesque/vscode-shader/blob/master/LICENSE.md)
-[![VS Code marketplace button](http://vsmarketplacebadge.apphb.com/installs/slevesque.shader.svg)](https://marketplace.visualstudio.com/items/slevesque.shader)
+[![VS Code marketplace button](https://vsmarketplacebadge.apphb.com/installs/slevesque.shader.svg)](https://marketplace.visualstudio.com/items/slevesque.shader)
 [![Gitter chat button](https://img.shields.io/gitter/room/stef-levesque/vscode-shader.svg)](https://gitter.im/stef-levesque/vscode-shader)
 
 
