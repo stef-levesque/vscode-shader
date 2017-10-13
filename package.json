@@ -34,21 +34,9 @@
 		"languages": [
 			{
 				"id": "hlsl",
-				"aliases": [
-					"HLSL",
-					"High-Level Shading Language",
-					"hlsl"
-				],
 				"extensions": [
-					".fx",
-					".fxh",
-					".hlsl",
-					".hlsli",
-					".psh",
-					".vsh",
 					".sf"
-				],
-				"configuration": "./hlsl.configuration.json"
+				]
 			},
 			{
 				"id": "glsl",
