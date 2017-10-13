@@ -7,6 +7,12 @@
 	"categories": [
 		"Languages"
 	],
+	"activationEvents": [
+		"onLanguage:hlsl",
+		"onLanguage:glsl",
+		"onLanguage:cg"
+	],
+	"main": "./out/extension",
 	"license": "LICENSE.md",
 	"icon": "icon.png",
 	"bugs": {
@@ -22,7 +28,7 @@
 		"theme": "dark"
 	},
 	"engines": {
-		"vscode": "^0.10.1"
+		"vscode": "^1.17.0"
 	},
 	"keywords": [
 		"shader",
@@ -92,5 +98,18 @@
 				"path": "./syntaxes/cg.tmLanguage"
 			}
 		]
+	},
+	"scripts": {
+		"vscode:prepublish": "npm run compile",
+		"compile": "tsc -p ./",
+		"watch": "tsc -watch -p ./",
+		"postinstall": "node ./node_modules/vscode/bin/install",
+		"test": "npm run compile && node ./node_modules/vscode/bin/test"
+	},
+	"devDependencies": {
+		"typescript": "^2.5.3",
+		"vscode": "^1.1.5",
+		"@types/node": "^7.0.43",
+		"@types/mocha": "^2.2.42"
 	}
 }
