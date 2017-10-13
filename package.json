@@ -83,11 +83,6 @@
 		],
 		"grammars": [
 			{
-				"language": "hlsl",
-				"scopeName": "source.hlsl",
-				"path": "./syntaxes/hlsl.tmLanguage"
-			},
-			{
 				"language": "glsl",
 				"scopeName": "source.glsl",
 				"path": "./syntaxes/glsl.tmLanguage"
