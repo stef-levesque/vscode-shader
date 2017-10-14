@@ -85,6 +85,17 @@ export default class HLSLCompletionItemProvider implements CompletionItemProvide
             }
         }
 
+        var text = document.getText();
+        var functionMatch = /^\w+\s+([a-zA-Z_\x7f-\xff][a-zA-Z0-9_\x7f-\xff]*)\s*\(/mg;
+        var match: RegExpExecArray = null;
+        while (match = functionMatch.exec(text)) {
+            var word = match[1];
+            if (!added[word]) {
+                added[word] = true;
+                result.push(createNewProposal(CompletionItemKind.Function, word, null));
+            }
+        }
+
         return Promise.resolve(result);
     }
 }
