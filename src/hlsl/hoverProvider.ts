@@ -12,6 +12,12 @@ export function textToMarkedString(text: string): MarkedString {
 export default class HLSLHoverProvider implements HoverProvider {
 
     public provideHover(document: TextDocument, position: Position, token: CancellationToken): Hover {
+        
+        let enable = workspace.getConfiguration('hlsl').get<boolean>('suggest.basic', true);
+        if (!enable) {
+            return null;
+        }
+
         let wordRange = document.getWordRangeAtPosition(position);
         if (!wordRange) {
             return null;

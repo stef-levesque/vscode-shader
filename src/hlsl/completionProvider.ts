@@ -11,6 +11,11 @@ export default class HLSLCompletionItemProvider implements CompletionItemProvide
     public provideCompletionItems(document: TextDocument, position: Position, token: CancellationToken): Promise<CompletionItem[]> {
         let result: CompletionItem[] = [];
 
+        let enable = workspace.getConfiguration('hlsl').get<boolean>('suggest.basic', true);
+        if (!enable) {
+            return Promise.resolve(result);
+        }
+
         var range = document.getWordRangeAtPosition(position);
         var prefix = range ? document.getText(range) : '';
         if (!range) {

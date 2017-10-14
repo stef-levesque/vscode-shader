@@ -92,7 +92,18 @@
 				"scopeName": "source.cg",
 				"path": "./syntaxes/cg.tmLanguage"
 			}
-		]
+		],
+		"configuration": {
+			"title": "VS Code Shader Configuration",
+			"type": "object",
+			"properties": {
+				"hlsl.suggest.basic": {
+					"type": "boolean",
+					"default": true,
+					"description": "Configures if the extension HLSL language suggestions are enabled."
+				}
+			}
+		}
 	},
 	"scripts": {
 		"vscode:prepublish": "npm run compile",
