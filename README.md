@@ -5,18 +5,42 @@
 [![VS Code marketplace button](https://vsmarketplacebadge.apphb.com/installs/slevesque.shader.svg)](https://marketplace.visualstudio.com/items/slevesque.shader)
 [![Gitter chat button](https://img.shields.io/gitter/room/stef-levesque/vscode-shader.svg)](https://gitter.im/stef-levesque/vscode-shader)
 
+## Description
 
-Syntax highlighter for shader languages
-* `HSLS` - High-Level Shading Language
+Shader languages support for VS Code
+
+* `HLSL` - High-Level Shading Language
 * `GLSL` - OpenGL Shading Language
 * `Cg` - C for Graphics
 
+## Main Features
+
+### All languages
+
+#### Syntax highlighting for shader languages
+![Syntax Highlighting](images/syntax-highlight.png)
+
+### HLSL
+
+#### Show Code Completion Proposals
+![Code Completion](images/code-completion.png)
+
+#### Help With Function and Method Signatures
+![Signature Help](images/signature-help.png)
+
+#### Show Hover
+![Show Hover](images/show-hover.png)
+
+## Configuration
+
+* `hlsl.suggest.basic` Configures if the HLSL language suggestions are enabled
+
 ## Installation
 
-1. Install *Visual Studio Code* (0.10.1 or higher)
+1. Install *Visual Studio Code* (1.17.0 or higher)
 2. Launch *Code*
 3. From the command palette `Ctrl-Shift-P` (Windows, Linux) or `Cmd-Shift-P` (OSX)
-4. Select `Install Extension`
+4. Select `Install Extensions`
 5. Choose the extension `Shader languages support for VS Code`
 6. Reload *Visual Studio Code*
 
@@ -30,7 +54,7 @@ Syntax highlighter for shader languages
 
 ## Requirements
 
-Visual Studio Code v0.10.x (November 2015)
+Visual Studio Code v1.17.0
 
 ## Credits
 
