@@ -1,6 +1,6 @@
 'use strict';
 
-import { HoverProvider, Hover, MarkdownString, MarkedString, TextDocument, CancellationToken, Range, Position, workspace } from 'vscode';
+import { HoverProvider, Hover, SymbolInformation, SymbolKind, MarkdownString, MarkedString, TextDocument, CancellationToken, Range, Position, commands, workspace } from 'vscode';
 import hlslGlobals = require('./hlslGlobals');
 
 const linktext: string = "[HLSL documentation][1]\n\n[1]: ";
@@ -11,7 +11,11 @@ export function textToMarkedString(text: string): MarkedString {
 
 export default class HLSLHoverProvider implements HoverProvider {
 
-    public provideHover(document: TextDocument, position: Position, token: CancellationToken): Hover {
+    private getSymbols(document: TextDocument): Thenable<SymbolInformation[]> {
+        return commands.executeCommand<SymbolInformation[]>('vscode.executeDocumentSymbolProvider', document.uri);
+    }
+
+    public async provideHover(document: TextDocument, position: Position, token: CancellationToken): Promise<Hover> {
         
         let enable = workspace.getConfiguration('hlsl').get<boolean>('suggest.basic', true);
         if (!enable) {
@@ -141,6 +145,26 @@ export default class HLSLHoverProvider implements HoverProvider {
                 contents.push(link);
             }
             return new Hover(contents, wordRange);
+        }
+
+        let symbols = await this.getSymbols(document);
+
+        for (let s of symbols) {
+            if (s.name === name) {
+                let contents: MarkedString[] = [];
+                let signature = '(*' + SymbolKind[s.kind].toLowerCase() + '*) ';
+                signature += s.containerName ? s.containerName + '.' : '';
+                signature += '**' + name + '**';
+
+                contents.push(new MarkdownString(signature));
+
+                if (s.location.uri.toString() === document.uri.toString()) {
+                    //contents = [];
+                    contents.push( {language: 'hlsl', value: document.getText(s.location.range)} );
+                }
+                
+                return new Hover(contents, wordRange);
+            }
         }
     } 
 }
