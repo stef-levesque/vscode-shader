@@ -6,6 +6,7 @@ import HLSLHoverProvider from './hlsl/hoverProvider';
 import HLSLCompletionItemProvider from './hlsl/completionProvider';
 import HLSLSignatureHelpProvider from './hlsl/signatureProvider';
 import HLSLSymbolProvider from './hlsl/symbolProvider';
+import HLSLDefinitionProvider from './hlsl/definitionProvider';
 
 import * as fs from 'fs';
 import * as tmp from 'tmp';
@@ -42,6 +43,11 @@ export async function activate(context: vscode.ExtensionContext) {
     context.subscriptions.push(vscode.languages.registerCompletionItemProvider('hlsl', new HLSLCompletionItemProvider(), '.'));
     context.subscriptions.push(vscode.languages.registerSignatureHelpProvider('hlsl', new HLSLSignatureHelpProvider(), '(', ','));
     context.subscriptions.push(vscode.languages.registerDocumentSymbolProvider('hlsl', new HLSLSymbolProvider()));
+
+    let definitionProvider = new HLSLDefinitionProvider();
+    context.subscriptions.push(vscode.languages.registerDefinitionProvider('hlsl', definitionProvider));
+    context.subscriptions.push(vscode.languages.registerImplementationProvider('hlsl', definitionProvider));
+    context.subscriptions.push(vscode.languages.registerTypeDefinitionProvider('hlsl', definitionProvider));
 
     if (vscode.extensions.getExtension('ms-vscode.cpptools') !== undefined) {
         let formatingProvider = new HLSLFormatingProvider();
