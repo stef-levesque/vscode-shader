@@ -38,7 +38,10 @@ export async function activate(context: vscode.ExtensionContext) {
     context.subscriptions.push(vscode.languages.registerHoverProvider('hlsl', new HLSLHoverProvider()));
     context.subscriptions.push(vscode.languages.registerCompletionItemProvider('hlsl', new HLSLCompletionItemProvider(), '.'));
     context.subscriptions.push(vscode.languages.registerSignatureHelpProvider('hlsl', new HLSLSignatureHelpProvider(), '(', ','));
-    context.subscriptions.push(vscode.languages.registerDocumentSymbolProvider('hlsl', new HLSLSymbolProvider()));
+
+    let symbolProvider = new HLSLSymbolProvider();
+    context.subscriptions.push(vscode.languages.registerDocumentSymbolProvider('hlsl', symbolProvider));
+    context.subscriptions.push(vscode.languages.registerWorkspaceSymbolProvider(symbolProvider));
 
     let definitionProvider = new HLSLDefinitionProvider();
     context.subscriptions.push(vscode.languages.registerDefinitionProvider('hlsl', definitionProvider));
