@@ -119,6 +119,7 @@
 		"@types/mocha": "^2.2.42"
 	},
 	"dependencies": {
+		"jsdom": "^11.3.0",
 		"tmp": "0.0.33"
 	}
 }
