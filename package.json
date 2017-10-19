@@ -101,6 +101,11 @@
 					"type": "boolean",
 					"default": true,
 					"description": "Configures if the extension HLSL language suggestions are enabled."
+				},
+				"hlsl.openDocOnSide": {
+					"type": "boolean",
+					"default": true,
+					"description": "Open the HLSL Documentation links on the side"
 				}
 			}
 		}
