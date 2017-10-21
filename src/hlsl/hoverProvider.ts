@@ -1,12 +1,12 @@
 'use strict';
 
-import { TextDocumentContentProvider, HoverProvider, Hover, SymbolInformation, SymbolKind, MarkdownString, MarkedString, TextDocument, CancellationToken, Range, Position, Uri, ViewColumn, Disposable, commands, workspace } from 'vscode';
+import { TextDocumentContentProvider, Event, EventEmitter, HoverProvider, Hover, SymbolInformation, SymbolKind, MarkdownString, MarkedString, TextDocument, CancellationToken, Range, Position, Uri, ViewColumn, Disposable, commands, window, workspace } from 'vscode';
 import { HTML_TEMPLATE } from './html';
 import hlslGlobals = require('./hlslGlobals');
 import * as https from 'https';
+import { JSDOM } from 'jsdom';
 
-const jsdom = require('jsdom');
-const { JSDOM } = jsdom;
+export var hlsldocUri: Uri = Uri.parse('hlsldoc://default');
 
 export function textToMarkedString(text: string): MarkedString {
 	return text.replace(/[\\`*_{}[\]()#+\-.!]/g, '\\$&'); // escape markdown syntax tokens: http://daringfireball.net/projects/markdown/syntax#backslash
@@ -20,7 +20,7 @@ export function linkToMarkdownString(linkUrl: string): MarkdownString {
     let link = new MarkdownString('[HLSL documentation][1]\n\n[1]: ');
     let openDocOnSide = workspace.getConfiguration('hlsl').get<boolean>('openDocOnSide', false);
     if (openDocOnSide) {
-        link.appendText(encodeURI( 'command:shader.openLink?' + JSON.stringify([linkUrl])));
+        link.appendText(encodeURI( 'command:shader.openLink?' + JSON.stringify([linkUrl, true])));
     } else {
         link.appendText(linkUrl);
     }
@@ -28,22 +28,29 @@ export function linkToMarkdownString(linkUrl: string): MarkdownString {
     return link;
 }
 
-
 export default class HLSLHoverProvider implements HoverProvider {
 
     private _subscriptions: Disposable[] = [];
+    private _hlslDocProvider: HLSLDocumentationTextDocumentProvider = null;
 
     private getSymbols(document: TextDocument): Thenable<SymbolInformation[]> {
         return commands.executeCommand<SymbolInformation[]>('vscode.executeDocumentSymbolProvider', document.uri);
     }
 
     constructor() {
-        this._subscriptions.push( commands.registerCommand('shader.openLink', (link: Uri | string) => {
-            let hlsldoclink =  Uri.parse(link.toString()).with({scheme: 'hlsldoc'}); 
-            commands.executeCommand('vscode.previewHtml', hlsldoclink, ViewColumn.Two, "HLSL Documentation");
+        this._hlslDocProvider = new HLSLDocumentationTextDocumentProvider();
+        this._subscriptions.push( workspace.registerTextDocumentContentProvider('hlsldoc', this._hlslDocProvider ) );
+        this._subscriptions.push( commands.registerCommand('shader.openLink', (link: string, newWindow: boolean) => {
+            commands.executeCommand('vscode.previewHtml', hlsldocUri, newWindow ? ViewColumn.Two : ViewColumn.Active, "HLSL Documentation").then(() => {
+                commands.executeCommand('_workbench.htmlPreview.postMessage',
+                Uri.parse('hlsldoc://default'),
+                {
+                    line: 0
+                });
+            });
+            this._hlslDocProvider.goto(Uri.parse(link));
         }));
 
-        this._subscriptions.push( workspace.registerTextDocumentContentProvider('hlsldoc', new HLSLDocumentationTextDocumentProvider() ) );
     }
 
     dispose() {
@@ -170,8 +177,20 @@ export default class HLSLHoverProvider implements HoverProvider {
 }
 
 class HLSLDocumentationTextDocumentProvider implements TextDocumentContentProvider {
+    
+    private _uri = null;
+    public goto(uri: Uri) {
+        this._uri = uri;
+        this._onDidChange.fire(hlsldocUri);
+    }
+    
+    private _onDidChange = new EventEmitter<Uri>();
+    get onDidChange(): Event<Uri> {
+		return this._onDidChange.event;
+	}
 
     public provideTextDocumentContent(uri): Promise<string> {
+        uri = this._uri;
         return new Promise<string>((resolve, reject) => { 
             let request = https.request({
                 host: uri.authority,
@@ -182,13 +201,25 @@ class HLSLDocumentationTextDocumentProvider implements TextDocumentContentProvid
                     return resolve(response.headers.location);
                 if (response.statusCode != 200)
                     return resolve(response.statusCode.toString());
-                let topic = '';
-                response.on('data', (data) => { topic += data.toString(); });
+                let html = '';
+                response.on('data', (data) => { html += data.toString(); });
                 response.on('end', () => { 
-                    const dom = new JSDOM(topic);
+                    const dom = new JSDOM(html);
+                    let topic = '';
                     let node = dom.window.document.querySelector('.topic');
-                    topic = node.outerHTML;
-
+                    if (node) {
+                        let num = node.getElementsByTagName('a').length;
+                        for (let i=0; i<num; ++i) {
+                            if (node.getElementsByTagName('a')[i].href.startsWith('http')) {
+                                node.getElementsByTagName('a')[i].href = encodeURI( 'command:shader.openLink?' + JSON.stringify([node.getElementsByTagName('a')[i].href, false]));
+                            }
+                        }
+                        topic = node.outerHTML;
+                        
+                    } else {
+                        let link = uri.with({scheme: 'https'}).toString();
+                        topic = `<a href="${link}">No topic found, click to follow link</a>`;
+                    }
                     resolve(HTML_TEMPLATE.replace('{0}', topic));
                 });
                 response.on('error', (error) => { console.log(error); });
