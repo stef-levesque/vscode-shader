@@ -136,17 +136,23 @@ export default class HLSLDocumentSymbolProvider implements DocumentSymbolProvide
                             let lineMatch = /^(?:((?:[a-zA-Z]:)?[^:]*):)?(\d+):(\d):(.+)/.exec(line);
                             if (lineMatch) {
                                 let position: Position = new Position(parseInt(lineMatch[2]) - 1, parseInt(lineMatch[3]) - 1);
+                                let range = new Range(position, position);
                                 let filepath = lineMatch[1] ? lineMatch[1] : files.trim();//join(workspace.rootPath, match[1]);
                                 let regex = new RegExp(searchPattern);
+                                let word = '?????';
                                 let symbolMatch = regex.exec(lineMatch[4].toString());
-                                let word = symbolMatch ? symbolMatch[1] : '?????';
+                                if (symbolMatch) {
+                                    word = symbolMatch[1];
+                                    position = position.with({character: symbolMatch[0].indexOf(word)});
+                                    range = new Range(position, position.translate(0, word.length));
+                                }
 
                                 if (!this._symbolCache[filepath]) {
                                     console.log('missing: ' + filepath);
                                     this._symbolCache[filepath] = [];
                                 }
 
-                                this._symbolCache[filepath].push(new SymbolInformation(word, kind, '', new Location(Uri.file(filepath), position)));
+                                this._symbolCache[filepath].push(new SymbolInformation(word, kind, '', new Location(Uri.file(filepath), range)));
                             }
                         }
                     }
