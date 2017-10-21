@@ -125,6 +125,7 @@
 	},
 	"dependencies": {
 		"jsdom": "^11.3.0",
-		"tmp": "0.0.33"
+		"tmp": "0.0.33",
+		"vscode-ripgrep": "^0.6.0-patch.0"
 	}
 }
