@@ -7,6 +7,7 @@ import HLSLCompletionItemProvider from './hlsl/completionProvider';
 import HLSLSignatureHelpProvider from './hlsl/signatureProvider';
 import HLSLSymbolProvider from './hlsl/symbolProvider';
 import HLSLDefinitionProvider from './hlsl/definitionProvider';
+import HLSLReferenceProvider from './hlsl/referenceProvider';
 
 import * as fs from 'fs';
 import * as tmp from 'tmp';
@@ -38,6 +39,7 @@ export async function activate(context: vscode.ExtensionContext) {
     context.subscriptions.push(vscode.languages.registerHoverProvider('hlsl', new HLSLHoverProvider()));
     context.subscriptions.push(vscode.languages.registerCompletionItemProvider('hlsl', new HLSLCompletionItemProvider(), '.'));
     context.subscriptions.push(vscode.languages.registerSignatureHelpProvider('hlsl', new HLSLSignatureHelpProvider(), '(', ','));
+    context.subscriptions.push(vscode.languages.registerReferenceProvider('hlsl', new HLSLReferenceProvider()));
 
     let symbolProvider = new HLSLSymbolProvider();
     context.subscriptions.push(vscode.languages.registerDocumentSymbolProvider('hlsl', symbolProvider));
