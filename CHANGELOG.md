@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.0] 2017-10-23
+
+* Add symbol support, for document and workspace
+* Add reference and definition support
+* Add format support, if MS CppTools is installed
+* Open HLSL documentation in editor, on the side
+
 ## [1.0.0] 2017-10-14
 
 * Hover, code completion and signature helper for HLSL
@@ -36,6 +43,7 @@
 
 * Initial commit
 
+[1.1.0]: https://github.com/stef-levesque/vscode-shader/compare/f267849465eb65db750662fd9a363f42f7fb3146...58c81e53136d6549b5df943fe5650ae5c78b7564
 [1.0.0]: https://github.com/stef-levesque/vscode-shader/compare/e00c227839e15ddf1361edc982cb5612ecf3c5ed...9d67fe5daa928c8608ee3d82c90335b1058bb4c7
 [0.2.4]: https://github.com/stef-levesque/vscode-shader/compare/20c737c39f5529968c4f0813ab124b39f215899c...5c09b38d319c57fb08bdf220c792dd3c8cc4f472
 [0.2.3]: https://github.com/stef-levesque/vscode-shader/compare/5190ee80f366babaa660bd64e0e1c0fe1fbffb53...c646bfae579fac36716c6299904e8a4f728c4972

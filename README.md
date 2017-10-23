@@ -31,9 +31,23 @@ Shader languages support for VS Code
 #### Show Hover
 ![Show Hover](images/show-hover.png)
 
+#### HLSL Documentation
+![HLSL Documentation](images/hlsl-doc.png)
+Clicking on the link in the Hover box will open HLSL documentation (when available)
+
+#### Find References and Definition
+![Find References](images/find-ref.png)
+
+#### Document and Workspace Symbols
+![document-symbols](images/document-symbols.png) ![workspace-symbols](images/workspace-symbols.png)
+
+#### Formatting Code
+*(Experimental)* Require [MS CppTools](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools) to be installed
+
 ## Configuration
 
 * `hlsl.suggest.basic` Configures if the HLSL language suggestions are enabled
+* `hlsl.openDocOnSide` Open HLSL Documentation link in editor and on the side, instead of in external browser
 
 ## Installation
 
