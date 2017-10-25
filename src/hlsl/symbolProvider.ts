@@ -1,7 +1,7 @@
 'use strict';
 
 import { DocumentSymbolProvider, WorkspaceSymbolProvider, SymbolKind, SymbolInformation, CancellationToken, TextDocument, Position, Range, RelativePattern, Location, Uri, Disposable, workspace, extensions } from 'vscode';
-import { rgPath } from 'vscode-ripgrep';
+import { rgPath } from '../common';
 import { execSync } from 'child_process';
 import { join } from 'path';
 
@@ -100,6 +100,10 @@ export default class HLSLDocumentSymbolProvider implements DocumentSymbolProvide
     }
 
     public provideWorkspaceSymbols(query: string, token: CancellationToken): Thenable<SymbolInformation[]> {
+        if (!rgPath) {
+            return null;
+        }
+        
         return new Promise<SymbolInformation[]>((resolve, reject) => {
 
             const execOpts = {
@@ -113,7 +117,7 @@ export default class HLSLDocumentSymbolProvider implements DocumentSymbolProvide
             for (let entry of searchPatterns) {
                 const kind = entry.kind;
                 const searchPattern = entry.pattern;
-                let output = execSync(`${rgPath} ${includePattern} -o --case-sensitive -H --line-number --column --hidden -e "${searchPattern}" .`, execOpts);
+                let output = execSync(`"${rgPath}" ${includePattern} -o --case-sensitive -H --line-number --column --hidden -e "${searchPattern}" .`, execOpts);
 
                 let lines = output.toString().split('\n');
                 for (let line of lines) {

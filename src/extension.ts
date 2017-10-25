@@ -1,6 +1,11 @@
 'use strict'
 
 import * as vscode from 'vscode';
+import * as fs from 'fs';
+import * as Path from 'path';
+import * as tmp from 'tmp';
+
+import { setRgPath } from './common'
 
 import HLSLHoverProvider from './hlsl/hoverProvider';
 import HLSLCompletionItemProvider from './hlsl/completionProvider';
@@ -8,9 +13,6 @@ import HLSLSignatureHelpProvider from './hlsl/signatureProvider';
 import HLSLSymbolProvider from './hlsl/symbolProvider';
 import HLSLDefinitionProvider from './hlsl/definitionProvider';
 import HLSLReferenceProvider from './hlsl/referenceProvider';
-
-import * as fs from 'fs';
-import * as tmp from 'tmp';
 
 class HLSLFormatingProvider implements vscode.DocumentFormattingEditProvider, vscode.DocumentRangeFormattingEditProvider {
 
@@ -34,6 +36,16 @@ class HLSLFormatingProvider implements vscode.DocumentFormattingEditProvider, vs
 export async function activate(context: vscode.ExtensionContext) {
 
     console.log('vscode-shader extension started');
+
+    if (process.mainModule.hasOwnProperty('paths')) {
+        for (let path of process.mainModule['paths']) {
+            let testPath = Path.join(path, 'vscode-ripgrep', 'bin', process.platform === 'win32' ? 'rg.exe' : 'rg');
+            if (fs.existsSync(testPath)) {
+                setRgPath(testPath);
+                break;
+            }
+        }
+    }
 
     // add providers
     context.subscriptions.push(vscode.languages.registerHoverProvider('hlsl', new HLSLHoverProvider()));
