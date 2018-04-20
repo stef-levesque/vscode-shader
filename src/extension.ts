@@ -33,6 +33,11 @@ class HLSLFormatingProvider implements vscode.DocumentFormattingEditProvider, vs
 
 }
 
+const documentSelector = [
+    { language: 'hlsl', scheme: 'file' },
+    { language: 'hlsl', scheme: 'untitled' },
+];
+
 export async function activate(context: vscode.ExtensionContext) {
 
     console.log('vscode-shader extension started');
@@ -48,24 +53,27 @@ export async function activate(context: vscode.ExtensionContext) {
     }
 
     // add providers
-    context.subscriptions.push(vscode.languages.registerHoverProvider('hlsl', new HLSLHoverProvider()));
-    context.subscriptions.push(vscode.languages.registerCompletionItemProvider('hlsl', new HLSLCompletionItemProvider(), '.'));
-    context.subscriptions.push(vscode.languages.registerSignatureHelpProvider('hlsl', new HLSLSignatureHelpProvider(), '(', ','));
-    context.subscriptions.push(vscode.languages.registerReferenceProvider('hlsl', new HLSLReferenceProvider()));
+    context.subscriptions.push(vscode.languages.registerHoverProvider(documentSelector, new HLSLHoverProvider()));
+    context.subscriptions.push(vscode.languages.registerCompletionItemProvider(documentSelector, new HLSLCompletionItemProvider(), '.'));
+    context.subscriptions.push(vscode.languages.registerSignatureHelpProvider(documentSelector, new HLSLSignatureHelpProvider(), '(', ','));
+    context.subscriptions.push(vscode.languages.registerReferenceProvider(documentSelector, new HLSLReferenceProvider()));
 
     let symbolProvider = new HLSLSymbolProvider();
-    context.subscriptions.push(vscode.languages.registerDocumentSymbolProvider('hlsl', symbolProvider));
-    context.subscriptions.push(vscode.languages.registerWorkspaceSymbolProvider(symbolProvider));
+    context.subscriptions.push(vscode.languages.registerDocumentSymbolProvider(documentSelector, symbolProvider));
+
+    if (vscode.workspace.rootPath) {
+        context.subscriptions.push(vscode.languages.registerWorkspaceSymbolProvider(symbolProvider));
+    }
 
     let definitionProvider = new HLSLDefinitionProvider();
-    context.subscriptions.push(vscode.languages.registerDefinitionProvider('hlsl', definitionProvider));
-    context.subscriptions.push(vscode.languages.registerImplementationProvider('hlsl', definitionProvider));
-    context.subscriptions.push(vscode.languages.registerTypeDefinitionProvider('hlsl', definitionProvider));
+    context.subscriptions.push(vscode.languages.registerDefinitionProvider(documentSelector, definitionProvider));
+    context.subscriptions.push(vscode.languages.registerImplementationProvider(documentSelector, definitionProvider));
+    context.subscriptions.push(vscode.languages.registerTypeDefinitionProvider(documentSelector, definitionProvider));
 
     if (vscode.extensions.getExtension('ms-vscode.cpptools') !== undefined) {
         let formatingProvider = new HLSLFormatingProvider();
-        context.subscriptions.push(vscode.languages.registerDocumentFormattingEditProvider('hlsl', formatingProvider));
-        context.subscriptions.push(vscode.languages.registerDocumentRangeFormattingEditProvider('hlsl', formatingProvider));
+        context.subscriptions.push(vscode.languages.registerDocumentFormattingEditProvider(documentSelector, formatingProvider));
+        context.subscriptions.push(vscode.languages.registerDocumentRangeFormattingEditProvider(documentSelector, formatingProvider));
     }
 
 }
