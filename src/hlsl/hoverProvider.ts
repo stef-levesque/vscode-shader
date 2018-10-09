@@ -3,7 +3,7 @@
 import { TextDocumentContentProvider, Event, EventEmitter, HoverProvider, Hover, SymbolInformation, SymbolKind, MarkdownString, MarkedString, TextDocument, CancellationToken, Range, Position, Uri, ViewColumn, Disposable, commands, window, workspace } from 'vscode';
 import { HTML_TEMPLATE } from './html';
 import hlslGlobals = require('./hlslGlobals');
-import * as https from 'https';
+import { https } from 'follow-redirects';
 import { JSDOM } from 'jsdom';
 
 export var hlsldocUri: Uri = Uri.parse('hlsldoc://default');
@@ -206,7 +206,7 @@ class HLSLDocumentationTextDocumentProvider implements TextDocumentContentProvid
                 response.on('end', () => { 
                     const dom = new JSDOM(html);
                     let topic = '';
-                    let node = dom.window.document.querySelector('.topic');
+                    let node = dom.window.document.querySelector('.content');
                     if (node) {
                         let num = node.getElementsByTagName('a').length;
                         for (let i=0; i<num; ++i) {
