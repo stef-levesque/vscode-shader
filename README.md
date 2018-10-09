@@ -74,6 +74,7 @@ Visual Studio Code v1.17.0
 
 * [Visual Studio Code](https://code.visualstudio.com/)
 * [vscode-docs on GitHub](https://github.com/Microsoft/vscode-docs)
+* [Follow Redirects on GitHub](https://github.com/olalonde/follow-redirects)
 * [HLSL Tools for Visual Studio](https://github.com/tgjones/HlslTools)
 * [Sublime Text - GLSL Package](https://github.com/euler0/sublime-glsl)
 
