@@ -41,7 +41,9 @@
 			{
 				"id": "hlsl",
 				"extensions": [
-					".sf"
+					".sf",
+					".usf",
+					".ush"
 				]
 			},
 			{
