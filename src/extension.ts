@@ -6,6 +6,7 @@ import * as Path from 'path';
 import * as tmp from 'tmp';
 
 import { setRgPath } from './common'
+import { SessionManager } from './session';
 
 import HLSLHoverProvider from './hlsl/hoverProvider';
 import HLSLCompletionItemProvider from './hlsl/completionProvider';
@@ -38,9 +39,19 @@ const documentSelector = [
     { language: 'hlsl', scheme: 'untitled' },
 ];
 
+var sessionManager: SessionManager = undefined;
+
 export async function activate(context: vscode.ExtensionContext) {
 
     console.log('vscode-shader extension started');
+
+    const lspEnable = vscode.workspace.getConfiguration("hlsl").get<Boolean>("experimental.lspEnable", false);
+
+    if (lspEnable) {
+        context.subscriptions.push(sessionManager = new SessionManager());
+        sessionManager.start();
+        return;
+    }
 
     if (process.mainModule.hasOwnProperty('paths')) {
         for (let path of process.mainModule['paths']) {

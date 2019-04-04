@@ -44,9 +44,15 @@ Clicking on the link in the Hover box will open HLSL documentation (when availab
 #### Formatting Code
 *(Experimental)* Require [MS CppTools](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools) to be installed
 
+#### Enhanced Language Support
+*(Experimental)* Use [tgjones/ShaderTools](https://github.com/tgjones/ShaderTools) for enhanced support of HLSL and Unity ShaderLab shaders.  
+`"hlsl.experimental.lspEnable": true` must be set in your configuration.  
+*Required* [.NET Core runtime](https://dotnet.microsoft.com/download/dotnet-core) 2.1 or later
+
 ## Configuration
 
 * `hlsl.suggest.basic` Configures if the HLSL language suggestions are enabled
+* `hlsl.experimental.lspEnable` Use the experimental Language Server Protocol for enhanced support
 * `hlsl.openDocOnSide` Open HLSL Documentation link in editor and on the side, instead of in external browser
 
 ## Installation
@@ -75,7 +81,7 @@ Visual Studio Code v1.17.0
 * [Visual Studio Code](https://code.visualstudio.com/)
 * [vscode-docs on GitHub](https://github.com/Microsoft/vscode-docs)
 * [Follow Redirects on GitHub](https://github.com/olalonde/follow-redirects)
-* [HLSL Tools for Visual Studio](https://github.com/tgjones/HlslTools)
+* [Shader Tools for Visual Studio](https://github.com/tgjones/ShaderTools)
 * [Sublime Text - GLSL Package](https://github.com/euler0/sublime-glsl)
 
 ## License
