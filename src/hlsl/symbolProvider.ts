@@ -1,7 +1,7 @@
 'use strict';
 
 import { DocumentSymbolProvider, WorkspaceSymbolProvider, SymbolKind, SymbolInformation, CancellationToken, TextDocument, Position, Range, RelativePattern, Location, Uri, Disposable, workspace, extensions } from 'vscode';
-import { rgPath } from '../common';
+import { rgPath, hlslExtensions } from '../common';
 import { execSync } from 'child_process';
 import { join } from 'path';
 
@@ -21,7 +21,7 @@ export default class HLSLDocumentSymbolProvider implements DocumentSymbolProvide
 
     private _disposables: Disposable[] = [];
 
-    private _hlslPattern = ['.hlsl','.hlsli','.fx','.fxh','.vsh','.psh','.cginc','.compute'];
+    private _hlslPattern = ['.hlsl','.hlsli','.fx','.fxh','.vsh','.psh','.cginc','.compute', '.ush', '.usf'];
     
     constructor() {
         const extention = extensions.getExtension('vscode.hlsl');
@@ -30,8 +30,13 @@ export default class HLSLDocumentSymbolProvider implements DocumentSymbolProvide
             && extention.packageJSON.contributes.languages) {
             let hlsllang: any[] = extention.packageJSON.contributes.languages.filter(l => l.id === 'hlsl');
             if (hlsllang.length && hlsllang[0].extensions) {
-                this._hlslPattern = hlsllang[0].extensions;
+                this._hlslPattern = hlsllang[0].extensions.slice();
             }
+        }
+
+        for(let ext of hlslExtensions)
+        {
+            this._hlslPattern.push(ext);
         }
     }
 
