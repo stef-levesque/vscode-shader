@@ -5,7 +5,7 @@ import * as fs from 'fs';
 import * as Path from 'path';
 import * as tmp from 'tmp';
 
-import { setRgPath } from './common'
+import { setRgPath, getRgPath, sethlslExtensions } from './common'
 
 import HLSLHoverProvider from './hlsl/hoverProvider';
 import HLSLCompletionItemProvider from './hlsl/completionProvider';
@@ -42,6 +42,30 @@ const documentSelector = [
     { language: 'hlsl', scheme: 'untitled' },
 ];
 
+function ripgrepPath()
+{
+    function exeName()
+    {
+        var isWin = /^win/.test( process.platform );
+        return isWin ? "rg.exe" : "rg";
+    }
+
+    function exePathIsDefined( rgExePath )
+    {
+        return fs.existsSync( rgExePath ) ? rgExePath : undefined;
+    }
+
+    var rgPath = "";
+
+    rgPath = exePathIsDefined( Path.join( vscode.env.appRoot, "node_modules/vscode-ripgrep/bin/", exeName() ) );
+    if( rgPath ) return rgPath;
+
+    rgPath = exePathIsDefined( Path.join( vscode.env.appRoot, "node_modules.asar.unpacked/vscode-ripgrep/bin/", exeName() ) );
+    if( rgPath ) return rgPath;
+
+    return rgPath;
+}
+
 export async function activate(context: vscode.ExtensionContext) {
 
     console.log('vscode-shader extension started');
@@ -53,6 +77,20 @@ export async function activate(context: vscode.ExtensionContext) {
                 setRgPath(testPath);
                 break;
             }
+        }
+    }
+
+    if (!getRgPath())
+    {
+        let path = ripgrepPath();
+        setRgPath(path);
+    }
+
+    let associations = vscode.workspace.getConfiguration('files.associations');
+    for(let fileType of Object.keys(associations)){
+        if(associations[fileType]  === 'hlsl')
+        {
+            sethlslExtensions(fileType.substring(1));
         }
     }
 
