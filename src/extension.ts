@@ -19,7 +19,10 @@ class HLSLFormatingProvider implements vscode.DocumentFormattingEditProvider, vs
     public async provideDocumentFormattingEdits(document: vscode.TextDocument, options: vscode.FormattingOptions, token: vscode.CancellationToken): Promise<vscode.TextEdit[]> {
         var tmpFile = tmp.fileSync({prefix: 'hlsl-', postfix: '.cpp'});
         fs.writeFileSync(tmpFile.name, document.getText());
-        return vscode.commands.executeCommand<vscode.TextEdit[]>('vscode.executeFormatDocumentProvider', vscode.Uri.file(tmpFile), options);
+
+        let doc = await vscode.workspace.openTextDocument(tmpFile.name);
+        return vscode.commands.executeCommand<vscode.TextEdit[]>('vscode.executeFormatDocumentProvider', doc.uri, options)
+            .then(r => (tmpFile.removeCallback(), r));
     }
 
     public async provideDocumentRangeFormattingEdits(document: vscode.TextDocument, range: vscode.Range, options: vscode.FormattingOptions, token: vscode.CancellationToken): Promise<vscode.TextEdit[]> {
@@ -28,7 +31,8 @@ class HLSLFormatingProvider implements vscode.DocumentFormattingEditProvider, vs
         fs.writeFileSync(tmpFile.name, document.getText());
 
         let doc = await vscode.workspace.openTextDocument(tmpFile.name);
-        return vscode.commands.executeCommand<vscode.TextEdit[]>('vscode.executeFormatRangeProvider', doc.uri, range, options);
+        return vscode.commands.executeCommand<vscode.TextEdit[]>('vscode.executeFormatRangeProvider', doc.uri, range, options)
+            .then(r => (tmpFile.removeCallback(), r));
     }
 
 }
