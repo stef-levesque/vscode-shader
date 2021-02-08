@@ -206,6 +206,15 @@ export const HTML_TEMPLATE = `
             color: white !important
         }
     </STYLE>
+    <script>
+    const vscode = acquireVsCodeApi();
+    function clickLink(link) {
+        vscode.postMessage({
+                        command: 'clickLink',
+                        text: link
+                    })
+    }
+    </script>
 </head>
 <body>
 {0}
