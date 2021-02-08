@@ -35,58 +35,58 @@
 	<key>patterns</key>
 	<array>
 		<dict>
-			<key>begin</key>
-			<string>//</string>
-			<key>end</key>
-			<string>$</string>
-			<key>name</key>
-			<string>comment.line.double-slash.hlsl</string>
+			<key>include</key>
+			<string>#literal</string>
+		</dict>
+		<dict>
+			<key>include</key>
+			<string>#operator</string>
 		</dict>
 		<dict>
 			<key>begin</key>
 			<string>/\*</string>
+			<key>beginCaptures</key>
+			<dict>
+				<key>0</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.comment.block.begin.glsl</string>
+				</dict>
+			</dict>
 			<key>end</key>
 			<string>\*/</string>
+			<key>endCaptures</key>
+			<dict>
+				<key>0</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.comment.block.end.glsl</string>
+				</dict>
+			</dict>
 			<key>name</key>
-			<string>comment.block.hlsl</string>
-		</dict>
-		<dict>
-			<key>comment</key>
-			<string>Numeric constants</string>
-			<key>match</key>
-			<string>\b([0-9]+\.?[0-9]*)|(\.[0-9]+)\b</string>
-			<key>name</key>
-			<string>constant.numeric.hlsl</string>
-		</dict>
-		<dict>
-			<key>comment</key>
-			<string>Language constants</string>
-			<key>match</key>
-			<string>\b(false|FALSE|NULL|true|TRUE)\b</string>
-			<key>name</key>
-			<string>constant.language.hlsl</string>
+			<string>comment.block.glsl</string>
 		</dict>
 		<dict>
 			<key>begin</key>
-			<string>^\s*#\s*(define|defined|elif|else|if|ifdef|ifndef|endif|line|pragma|extension|version|error|include|undef)\b</string>
-			<key>captures</key>
+			<string>//</string>
+			<key>beginCaptures</key>
 			<dict>
-				<key>name</key>
-				<string>keyword.control.hlsl</string>
+				<key>0</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.comment.glsl</string>
+				</dict>
 			</dict>
 			<key>end</key>
-			<string>(?=(?://|/\*))|$</string>
+			<string>\n</string>
 			<key>name</key>
-			<string>keyword.control.hlsl</string>
-			<key>patterns</key>
-			<array>
-				<dict>
-					<key>match</key>
-					<string>(?&gt;\\\s*\n)</string>
-					<key>name</key>
-					<string>keyword.control.hlsl</string>
-				</dict>
-			</array>
+			<string>comment.line.double-slash.glsl</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>^\s*#\s*(define|defined|undef|if|ifdef|ifndef|else|elif|endif|error|pragma|extension|version|line)\b</string>
+			<key>name</key>
+			<string>keyword.directive.preprocessor.glsl</string>
 		</dict>
 		<dict>
 			<key>match</key>
@@ -114,7 +114,7 @@
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>\b(layout|attribute|centroid|sampler|patch|const|flat|in|inout|invariant|noperspective|out|smooth|uniform|varying|buffer|shared|coherent|readonly|writeonly)\b</string>
+			<string>\b(layout|attribute|centroid|sampler|patch|const|flat|in|inout|invariant|noperspective|out|smooth|uniform|varying|buffer|shared|coherent|readonly|writeonly|volatile|restrict)\b</string>
 			<key>name</key>
 			<string>storage.modifier.glsl</string>
 		</dict>
@@ -136,17 +136,110 @@
 			<key>name</key>
 			<string>support.function.glsl</string>
 		</dict>
+	</array>
+	<key>repository</key>
+	<dict>
+		<key>literal</key>
+		<dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>#numeric-literal</string>
+				</dict>
+			</array>
+		</dict>
+		<key>operator</key>
+		<dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>#arithmetic-operator</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#increment-decrement-operator</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#bitwise-operator</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#comparative-operator</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#assignment-operator</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#logical-operator</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#ternary-operator</string>
+				</dict>
+			</array>
+		</dict>
+		<key>numeric-literal</key>
 		<dict>
 			<key>match</key>
-			<string>\b(asm|enum|extern|goto|inline|long|short|sizeof|static|typedef|union|unsigned)\b</string>
+			<string>\b([0-9][0-9_]*)(\.([0-9][0-9_]*))?([eE][+/-]?([0-9][0-9_]*))?\b</string>
 			<key>name</key>
-			<string>invalid.illegal.glsl</string>
+			<string>constant.numeric.glsl</string>
 		</dict>
+		<key>arithmetic-operator</key>
 		<dict>
-			<key>include</key>
-			<string>source.c</string>
+			<key>match</key>
+			<string>(?&lt;![/=\-+!*%&lt;&gt;&amp;|\^~.])(\+|\-|\*|\/|\%)(?![/=\-+!*%&lt;&gt;&amp;|^~.])</string>
+			<key>name</key>
+			<string>keyword.operator.arithmetic.glsl</string>
 		</dict>
-	</array>
+		<key>increment-decrement-operator</key>
+		<dict>
+			<key>match</key>
+			<string>(?&lt;![/=\-+!*%&lt;&gt;&amp;|\^~.])(\+\+|\-\-)(?![/=\-+!*%&lt;&gt;&amp;|^~.])</string>
+			<key>name</key>
+			<string>keyword.operator.increment-or-decrement.glsl</string>
+		</dict>
+		<key>bitwise-operator</key>
+		<dict>
+			<key>match</key>
+			<string>(?&lt;![/=\-+!*%&lt;&gt;&amp;|\^~.])(~|&amp;|\||\^|&lt;&lt;|&gt;&gt;)(?![/=\-+!*%&lt;&gt;&amp;|^~.])</string>
+			<key>name</key>
+			<string>keyword.operator.bitwise.glsl</string>
+		</dict>
+		<key>assignment-operator</key>
+		<dict>
+			<key>match</key>
+			<string>(?&lt;![/=\-+!*%&lt;&gt;&amp;|\^~.])(\+|\-|\*|\%|\/|&lt;&lt;|&gt;&gt;|&amp;|\^|\|)?=(?![/=\-+!*%&lt;&gt;&amp;|^~.])</string>
+			<key>name</key>
+			<string>keyword.operator.assignment.glsl</string>
+		</dict>
+		<key>comparative-operator</key>
+		<dict>
+			<key>match</key>
+			<string>(?&lt;![/=\-+!*%&lt;&gt;&amp;|\^~.])((=|!)=|(&lt;|&gt;)=?)(?![/=\-+!*%&lt;&gt;&amp;|^~.])</string>
+			<key>name</key>
+			<string>keyword.operator.comparative.glsl</string>
+		</dict>
+		<key>logical-operator</key>
+		<dict>
+			<key>match</key>
+			<string>(?&lt;![/=\-+!*%&lt;&gt;&amp;|\^~.])(!|&amp;&amp;|\|\||\^\^)(?![/=\-+!*%&lt;&gt;&amp;|^~.])</string>
+			<key>name</key>
+			<string>keyword.operator.arithmetic.glsl</string>
+		</dict>
+		<key>ternary-operator</key>
+		<dict>
+			<key>match</key>
+			<string>(\?|:)</string>
+			<key>name</key>
+			<string>keyword.operator.ternary.glsl</string>
+		</dict>
+	</dict>
 	<key>scopeName</key>
 	<string>source.glsl</string>
 	<key>uuid</key>
