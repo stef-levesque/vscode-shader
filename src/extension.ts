@@ -42,26 +42,29 @@ const documentSelector = [
     { language: 'hlsl', scheme: 'untitled' },
 ];
 
-function ripgrepPath()
+function searchRgPath()
 {
-    function exeName()
-    {
-        var isWin = /^win/.test( process.platform );
+    function exeName() {
+        const isWin = /^win/.test( process.platform );
         return isWin ? "rg.exe" : "rg";
     }
 
-    function exePathIsDefined( rgExePath )
-    {
+    function exePathIsDefined( rgExePath ) {
         return fs.existsSync( rgExePath ) ? rgExePath : undefined;
     }
 
-    var rgPath = "";
+    let rgPath = "";
 
     rgPath = exePathIsDefined( Path.join( vscode.env.appRoot, "node_modules/vscode-ripgrep/bin/", exeName() ) );
-    if( rgPath ) return rgPath;
+    if( rgPath ) {
+        return rgPath;
+    }
 
+    // If vscode-ripgrep is in an .asar file, then the binary is unpacked.
     rgPath = exePathIsDefined( Path.join( vscode.env.appRoot, "node_modules.asar.unpacked/vscode-ripgrep/bin/", exeName() ) );
-    if( rgPath ) return rgPath;
+    if( rgPath ) {
+        return rgPath;
+    }
 
     return rgPath;
 }
@@ -70,24 +73,15 @@ export async function activate(context: vscode.ExtensionContext) {
 
     console.log('vscode-shader extension started');
 
-    if (process.mainModule.hasOwnProperty('paths')) {
-        for (let path of process.mainModule['paths']) {
-            let testPath = Path.join(path, 'vscode-ripgrep', 'bin', process.platform === 'win32' ? 'rg.exe' : 'rg');
-            if (fs.existsSync(testPath)) {
-                setRgPath(testPath);
-                break;
-            }
-        }
+    const rgDiskPath = searchRgPath();
+    if (!rgDiskPath) {
+        console.log("vscode-shader couldn't find vscode-ripgrep binary path");
     }
+    setRgPath(rgDiskPath);
 
-    if (!getRgPath())
-    {
-        let path = ripgrepPath();
-        setRgPath(path);
-    }
 
-    let associations = vscode.workspace.getConfiguration('files.associations');
-    for(let fileType of Object.keys(associations)){
+    const associations = vscode.workspace.getConfiguration('files.associations');
+    for (const fileType of Object.keys(associations)){
         if(associations[fileType]  === 'hlsl')
         {
             setHlslExtensions(fileType.substring(1));
