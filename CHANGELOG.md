@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.5] 2021-02-08
+* Remove deprecated `workspace.rootPath`
+* Fix HLSL Documentation (#24)
+* Fix error in provideDocumentFormattingEdits (#29, thanks @Systemcluster)
+* Update GLSL grammar (#30)
+* Improved icon (#37, thanks @Andari85, @Tyriar)
+
 ## [1.1.4] 2018-10-09
 * Fix HLSL Documentation
 
@@ -51,6 +58,7 @@
 
 * Initial commit
 
+[1.1.5]: https://github.com/stef-levesque/vscode-shader/compare/98b6044edbfa3d316bf2e5ef4b50f82068fb74d5...06c8a4d291980708f90363f0f2fd02fe7c4f528f
 [1.1.4]: https://github.com/stef-levesque/vscode-shader/compare/81be436a4f765ebec5418e7c7b309d228cd7697d...98b6044edbfa3d316bf2e5ef4b50f82068fb74d5
 [1.1.3]: https://github.com/stef-levesque/vscode-shader/compare/a873126ce016e077a0af4fff46c324454738ae87...81be436a4f765ebec5418e7c7b309d228cd7697d
 [1.1.0]: https://github.com/stef-levesque/vscode-shader/compare/f267849465eb65db750662fd9a363f42f7fb3146...58c81e53136d6549b5df943fe5650ae5c78b7564
