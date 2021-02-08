@@ -1,6 +1,6 @@
 'use strict';
 
-import { DocumentSymbolProvider, WorkspaceSymbolProvider, SymbolKind, SymbolInformation, CancellationToken, TextDocument, Position, Range, RelativePattern, Location, Uri, Disposable, workspace, extensions } from 'vscode';
+import { DocumentSymbolProvider, WorkspaceSymbolProvider, SymbolKind, SymbolInformation, CancellationToken, TextDocument, Position, Range, RelativePattern, Location, Uri, Disposable, window, workspace, extensions } from 'vscode';
 import { rgPath, hlslExtensions } from '../common';
 import { execSync } from 'child_process';
 import { join } from 'path';
@@ -104,19 +104,51 @@ export default class HLSLDocumentSymbolProvider implements DocumentSymbolProvide
         return this.getDocumentSymbols(document.uri);
     }
 
+    private getDocument(): TextDocument | undefined {
+        // we wants to have a resource even when asking
+        // general questions so we check the active editor. If this
+        // doesn't match we take the first TS document.
+
+        const activeDocument = window.activeTextEditor?.document;
+        if (activeDocument) {
+            if (activeDocument.languageId == 'hlsl') {
+                return activeDocument;
+            }
+        }
+
+        const documents = workspace.textDocuments;
+        for (const document of documents) {
+            if (document.languageId == 'hlsl') {
+                return document;
+            }
+        }
+        return undefined;
+    }
+
     public provideWorkspaceSymbols(query: string, token: CancellationToken): Thenable<SymbolInformation[]> {
         if (!rgPath) {
             return null;
         }
         
         return new Promise<SymbolInformation[]>((resolve, reject) => {
+            let results: SymbolInformation[] = [];
 
+            const document = this.getDocument();
+            if (!document){
+                resolve( results );
+            }
+
+            const ws = workspace.getWorkspaceFolder(document.uri);
+            if (!ws) {
+                resolve(results);
+            }
+
+            const rootPath = ws.uri.fsPath;
             const execOpts = {
-                cwd: workspace.rootPath,
+                cwd: rootPath,
                 maxBuffer: 1024 * 1024
             }
 
-            let results: SymbolInformation[] = [];
             let includePattern = '-g *' +  this._hlslPattern.join(' -g *'); 
 
             for (let entry of searchPatterns) {
@@ -130,7 +162,7 @@ export default class HLSLDocumentSymbolProvider implements DocumentSymbolProvide
                     if (lineMatch) {
                         let position: Position = new Position(parseInt(lineMatch[2]) - 1, parseInt(lineMatch[3]) - 1);
                         let range = new Range(position, position);
-                        let filepath = join(workspace.rootPath, lineMatch[1]);
+                        let filepath = join(rootPath, lineMatch[1]);
                         let regex = new RegExp(searchPattern);
                         let word = '?????';
                         let symbolMatch = regex.exec(lineMatch[4].toString());

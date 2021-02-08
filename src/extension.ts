@@ -102,10 +102,7 @@ export async function activate(context: vscode.ExtensionContext) {
 
     let symbolProvider = new HLSLSymbolProvider();
     context.subscriptions.push(vscode.languages.registerDocumentSymbolProvider(documentSelector, symbolProvider));
-
-    if (vscode.workspace.rootPath) {
-        context.subscriptions.push(vscode.languages.registerWorkspaceSymbolProvider(symbolProvider));
-    }
+    context.subscriptions.push(vscode.languages.registerWorkspaceSymbolProvider(symbolProvider));
 
     let definitionProvider = new HLSLDefinitionProvider();
     context.subscriptions.push(vscode.languages.registerDefinitionProvider(documentSelector, definitionProvider));
