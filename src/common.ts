@@ -10,6 +10,6 @@ export function getRgPath() {
     return rgPath;
 }
 
-export function sethlslExtensions(ext: string){
+export function setHlslExtensions(ext: string){
     hlslExtensions.push(ext);
 }

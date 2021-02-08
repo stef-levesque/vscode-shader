@@ -30,14 +30,14 @@ export default class HLSLDocumentSymbolProvider implements DocumentSymbolProvide
             && extention.packageJSON.contributes.languages) {
             let hlsllang: any[] = extention.packageJSON.contributes.languages.filter(l => l.id === 'hlsl');
             if (hlsllang.length && hlsllang[0].extensions) {
-                this._hlslPattern = hlsllang[0].extensions.slice();
+                this._hlslPattern = this._hlslPattern.concat(hlsllang[0].extensions.slice());
             }
         }
 
-        for(let ext of hlslExtensions)
-        {
-            this._hlslPattern.push(ext);
-        }
+        this._hlslPattern = this._hlslPattern.concat(hlslExtensions)
+        
+        // Keep only unique entries
+        this._hlslPattern = [...new Set(this._hlslPattern)];
     }
 
     public dispose(){

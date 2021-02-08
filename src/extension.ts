@@ -5,7 +5,7 @@ import * as fs from 'fs';
 import * as Path from 'path';
 import * as tmp from 'tmp';
 
-import { setRgPath, getRgPath, sethlslExtensions } from './common'
+import { setRgPath, setHlslExtensions } from './common'
 
 import HLSLHoverProvider from './hlsl/hoverProvider';
 import HLSLCompletionItemProvider from './hlsl/completionProvider';
@@ -90,7 +90,7 @@ export async function activate(context: vscode.ExtensionContext) {
     for(let fileType of Object.keys(associations)){
         if(associations[fileType]  === 'hlsl')
         {
-            sethlslExtensions(fileType.substring(1));
+            setHlslExtensions(fileType.substring(1));
         }
     }
 
