@@ -1,0 +1,185 @@
+{
+    "scopeName": "text.html.glsl",
+    "injectionSelector": "L:text.html",
+    "patterns": [
+        {
+            "include": "#glsl-tag"
+        },
+        {
+            "include": "#script-type-glsl-tag"
+        }
+    ],
+    "repository": {
+        "string-double-quoted": {
+            "begin": "\"",
+            "beginCaptures": {
+                "0": {
+                    "name": "punctuation.definition.string.begin.html"
+                }
+            },
+            "end": "\"",
+            "endCaptures": {
+                "0": {
+                    "name": "punctuation.definition.string.end.html"
+                }
+            },
+            "name": "string.quoted.double.html"
+        },
+        "string-single-quoted": {
+            "begin": "'",
+            "beginCaptures": {
+                "0": {
+                    "name": "punctuation.definition.string.begin.html"
+                }
+            },
+            "end": "'",
+            "endCaptures": {
+                "0": {
+                    "name": "punctuation.definition.string.end.html"
+                }
+            },
+            "name": "string.quoted.single.html"
+        },
+        "unquoted-attribute": {
+            "patterns": [
+                {
+                    "match": "([^\\s&>\"'<=`]|&(?=>))+",
+                    "name": "string.unquoted.html"
+                }
+            ]
+        },
+        "tag-stuff": {
+            "patterns": [
+                {
+                    "begin": "([^\\s/=>\"'<]+)\\s*(=)\\s*",
+                    "beginCaptures": {
+                        "1": {
+                            "name": "entity.other.attribute-name.html"
+                        },
+                        "2": {
+                            "name": "punctuation.separator.key-value.html"
+                        }
+                    },
+                    "end": "(?!\\G)|(?=\\s|/?>)",
+                    "name": "meta.attribute-with-value.html",
+                    "patterns": [
+                        {
+                            "include": "#string-double-quoted"
+                        },
+                        {
+                            "include": "#string-single-quoted"
+                        },
+                        {
+                            "include": "#unquoted-attribute"
+                        }
+                    ]
+                },
+                {
+                    "match": "[^\\s/=>\"'<]+",
+                    "captures": {
+                        "0": {
+                            "name": "entity.other.attribute-name.html"
+                        }
+                    },
+                    "name": "meta.attribute-without-value.html"
+                }
+            ]
+        },
+        "glsl-tag": {
+            "begin": "(<)((?i:glsl))",
+            "beginCaptures": {
+                "1": {
+                    "name": "punctuation.definition.tag.begin.html"
+                },
+                "2": {
+                    "name": "entity.name.tag.html"
+                },
+                "3": {
+                    "name": "punctuation.definition.tag.end.html"
+                }
+            },
+            "end": "(</)((?i:glsl))(>)",
+            "endCaptures": {
+                "1": {
+                    "name": "punctuation.definition.tag.begin.html"
+                },
+                "2": {
+                    "name": "entity.name.tag.html"
+                },
+                "3": {
+                    "name": "punctuation.definition.tag.end.html"
+                }
+            },
+            "patterns": [
+                {
+                    "contentName": "source.glsl.embedded.html",
+                    "begin": "(>)",
+                    "beginCaptures": {
+                        "1": {
+                            "name": "punctuation.definition.tag.end.html"
+                        }
+                    },
+                    "end": "(?=</glsl>)",
+                    "patterns": [
+                        {
+                            "include": "source.glsl"
+                        }
+                    ]
+                }
+            ]
+        },
+        "script-type-glsl-tag": {
+            "begin": "(?i)(?=<script\\s+.*?\\btype\\s*=\\s*['\"]?x-shader/x-(?:vertex|fragment)['\"]?(?:\\s+|>))(<)(script)",
+            "beginCaptures": {
+                "1": {
+                    "name": "punctuation.definition.tag.begin.html"
+                },
+                "2": {
+                    "name": "entity.name.tag.html"
+                },
+                "3": {
+                    "name": "punctuation.definition.tag.end.html"
+                }
+            },
+            "end": "(?i)(</)(script)(>)",
+            "endCaptures": {
+                "1": {
+                    "name": "punctuation.definition.tag.begin.html"
+                },
+                "2": {
+                    "name": "entity.name.tag.html"
+                },
+                "3": {
+                    "name": "punctuation.definition.tag.end.html"
+                }
+            },
+            "name": "meta.tag.script-glsl.html",
+            "patterns": [
+                {
+                    "begin": "\\G",
+                    "end": "(>)",
+                    "endCaptures": {
+                        "1": {
+                            "name": "punctuation.definition.tag.end.html"
+                        }
+                    },
+                    "patterns": [
+                        {
+                            "include": "#tag-stuff"
+                        }
+                    ]
+                },
+                {
+                    "contentName": "source.glsl",
+                    "begin": "(?!\\G)",
+                    "end": "(?i)(?=</script>)",
+                    "patterns": [
+                        {
+                            "include": "source.glsl"
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}

@@ -91,6 +91,16 @@
 				"language": "cg",
 				"scopeName": "source.cg",
 				"path": "./syntaxes/cg.tmLanguage"
+			},
+			{
+				"scopeName": "text.html.glsl",
+				"path": "./syntaxes/glsl-html.tmLanguage.json",
+				"injectTo": [
+					"text.html"
+				],
+				"embeddedLanguages": {
+					"source.glsl": "glsl"
+				}
 			}
 		],
 		"configuration": {
