@@ -84,7 +84,7 @@
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>^\s*#\s*(define|defined|undef|if|ifdef|ifndef|else|elif|endif|error|pragma|extension|version|line)\b</string>
+			<string>^\s*#\s*(define|defined|elif|else|if|ifdef|ifndef|endif|line|pragma|extension|version|error|include|undef)\b</string>
 			<key>name</key>
 			<string>keyword.directive.preprocessor.glsl</string>
 		</dict>
