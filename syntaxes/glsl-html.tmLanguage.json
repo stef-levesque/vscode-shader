@@ -86,7 +86,7 @@
             ]
         },
         "glsl-tag": {
-            "begin": "(<)((?i:glsl))",
+            "begin": "(?i)(?=<glsl\\s+.*?(?:\\s+|>))(<)(glsl)",
             "beginCaptures": {
                 "1": {
                     "name": "punctuation.definition.tag.begin.html"
@@ -110,16 +110,26 @@
                     "name": "punctuation.definition.tag.end.html"
                 }
             },
+            "name": "meta.tag.glsl.html",
             "patterns": [
                 {
-                    "contentName": "source.glsl.embedded.html",
-                    "begin": "(>)",
-                    "beginCaptures": {
+                    "begin": "\\G",
+                    "end": "(>)",
+                    "endCaptures": {
                         "1": {
                             "name": "punctuation.definition.tag.end.html"
                         }
                     },
-                    "end": "(?=</glsl>)",
+                    "patterns": [
+                        {
+                            "include": "#tag-stuff"
+                        }
+                    ]
+                },
+                {
+                    "contentName": "source.glsl",
+                    "begin": "(?!\\G)",
+                    "end": "(?i)(?=</glsl>)",
                     "patterns": [
                         {
                             "include": "source.glsl"

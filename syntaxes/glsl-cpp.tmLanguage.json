@@ -1,0 +1,44 @@
+{
+    "scopeName": "source.cpp.glsl",
+    "injectionSelector": "L:source.cpp",
+    "patterns": [
+        {
+            "include": "#glsl-raw-string"
+        }
+    ],
+    "repository": {
+        "glsl-raw-string": {
+            "begin": "R\"(?i:glsl)(\\()",
+            "beginCaptures": {
+                "0": {
+                    "name": "punctuation.definition.string.begin.cpp"
+                },
+                "1": {
+                    "name": "glsl.delimeter.raw.string.cpp"
+                }
+            },
+            "end": "\\)(?i:glsl)\"",
+            "endCaptures": {
+                "0": {
+                    "name": "punctuation.definition.string.end.cpp"
+                },
+                "1": {
+                    "name": "glsl.delimeter.raw.string.cpp"
+                }
+            },
+            "name": "glsl.raw.string.cpp",
+            "patterns": [
+                {
+                    "contentName": "source.glsl",
+                    "begin": "(?!\\G)",
+                    "end": "(?i)(?=\\)glsl\")",
+                    "patterns": [
+                        {
+                            "include": "source.glsl"
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}
