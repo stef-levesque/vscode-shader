@@ -1,0 +1,44 @@
+{
+    "scopeName": "source.cpp.hlsl",
+    "injectionSelector": "L:source.cpp",
+    "patterns": [
+        {
+            "include": "#hlsl-raw-string"
+        }
+    ],
+    "repository": {
+        "hlsl-raw-string": {
+            "begin": "R\"(?i:hlsl)(\\()",
+            "beginCaptures": {
+                "0": {
+                    "name": "punctuation.definition.string.begin.cpp"
+                },
+                "1": {
+                    "name": "hlsl.delimeter.raw.string.cpp"
+                }
+            },
+            "end": "\\)(?i:hlsl)\"",
+            "endCaptures": {
+                "0": {
+                    "name": "punctuation.definition.string.end.cpp"
+                },
+                "1": {
+                    "name": "hlsl.delimeter.raw.string.cpp"
+                }
+            },
+            "name": "hlsl.raw.string.cpp",
+            "patterns": [
+                {
+                    "contentName": "source.hlsl",
+                    "begin": "(?!\\G)",
+                    "end": "(?i)(?=\\)hlsl\")",
+                    "patterns": [
+                        {
+                            "include": "source.hlsl"
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}

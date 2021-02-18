@@ -1,0 +1,44 @@
+{
+    "scopeName": "source.cpp.cg",
+    "injectionSelector": "L:source.cpp",
+    "patterns": [
+        {
+            "include": "#cg-raw-string"
+        }
+    ],
+    "repository": {
+        "cg-raw-string": {
+            "begin": "R\"(?i:cg)(\\()",
+            "beginCaptures": {
+                "0": {
+                    "name": "punctuation.definition.string.begin.cpp"
+                },
+                "1": {
+                    "name": "cg.delimeter.raw.string.cpp"
+                }
+            },
+            "end": "\\)(?i:cg)\"",
+            "endCaptures": {
+                "0": {
+                    "name": "punctuation.definition.string.end.cpp"
+                },
+                "1": {
+                    "name": "cg.delimeter.raw.string.cpp"
+                }
+            },
+            "name": "cg.raw.string.cpp",
+            "patterns": [
+                {
+                    "contentName": "source.cg",
+                    "begin": "(?!\\G)",
+                    "end": "(?i)(?=\\)cg\")",
+                    "patterns": [
+                        {
+                            "include": "source.cg"
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}

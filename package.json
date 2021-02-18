@@ -107,6 +107,36 @@
 				"embeddedLanguages": {
 					"source.glsl": "glsl"
 				}
+			},
+			{
+				"scopeName": "source.cpp.glsl",
+				"path": "./syntaxes/glsl-cpp.tmLanguage.json",
+				"injectTo": [
+					"source.cpp"
+				],
+				"embeddedLanguages": {
+					"source.glsl": "glsl"
+				}
+			},
+			{
+				"scopeName": "source.cpp.hlsl",
+				"path": "./syntaxes/hlsl-cpp.tmLanguage.json",
+				"injectTo": [
+					"source.cpp"
+				],
+				"embeddedLanguages": {
+					"source.hlsl": "hlsl"
+				}
+			},
+			{
+				"scopeName": "source.cpp.cg",
+				"path": "./syntaxes/cg-cpp.tmLanguage.json",
+				"injectTo": [
+					"source.cpp"
+				],
+				"embeddedLanguages": {
+					"source.cg": "cg"
+				}
 			}
 		],
 		"configuration": {
