@@ -137,6 +137,16 @@
 				"embeddedLanguages": {
 					"source.cg": "cg"
 				}
+			},
+			{
+				"scopeName": "markdown.shader.codeblock",
+				"path": "./syntaxes/markdown-codeblock.json",
+				"injectTo": [
+				  "text.html.markdown"
+				],
+				"embeddedLanguages": {
+				  "meta.embedded.block.shader": "glsl"
+				}
 			}
 		],
 		"configuration": {
