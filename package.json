@@ -139,13 +139,16 @@
 				}
 			},
 			{
-				"scopeName": "markdown.shader.codeblock",
+				"scopeName": "markdown.fenced.codeblock",
 				"path": "./syntaxes/markdown-codeblock.json",
 				"injectTo": [
 				  "text.html.markdown"
 				],
 				"embeddedLanguages": {
-				  "meta.embedded.block.shader": "glsl"
+				  "meta.embedded.block.glsl": "glsl",
+				  "meta.embedded.block.hlsl": "hlsl",
+				  "meta.embedded.block.cg": "cg",
+				  "meta.embedded.block.shaderlab": "shaderlab"
 				}
 			}
 		],
