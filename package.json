@@ -169,7 +169,7 @@
 	},
 	"dependencies": {
 		"follow-redirects": "^1.5.8",
-		"jsdom": "^11.3.0",
+		"jsdom": "^16.5.0",
 		"tmp": "0.0.33"
 	}
 }
