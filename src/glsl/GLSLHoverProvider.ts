@@ -67,7 +67,8 @@ export default class GLSLHoverProvider extends ShaderHoverProvider {
             const signature = `(*function*) **${name}**(${entry.parameters.map(p => p.label).join(',')})`;
             let contents: MarkedString[] = [];
             contents.push(new MarkdownString(signature));
-            contents.push(textToMarkedString(entry.description));
+            const parameters = entry.parameters.map(p => `*@param* \`${p.label}\` — ${p.documentation}`).join('\n\n')
+            contents.push(new MarkdownString(entry.description).appendMarkdown('\n\n' + parameters));
             contents.push(linkToMarkdownString(entry.link, this.openLinkCommand, this.language));
             return new Hover(contents, wordRange);
         }
