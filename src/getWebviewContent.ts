@@ -1,6 +1,6 @@
 'use strict';
 import { Uri, workspace } from 'vscode';
-import { HTML_TEMPLATE } from './html';
+import { getHtmlTemplate } from './html';
 import { https } from 'follow-redirects';
 
 export const replaceLinks = (node: any, dom: any, uri: Uri) => {
@@ -13,7 +13,7 @@ export const replaceLinks = (node: any, dom: any, uri: Uri) => {
     }
 }
 
-export function getWebviewContent(link: string, prepareHtmlForTemplate: (uri: Uri, html: string) => string): Promise<string> {
+export function getWebviewContent(link: string, prepareHtmlForTemplate: (uri: Uri, html: string) => string, scripts = ''): Promise<string> {
     const uri = Uri.parse(link);
     return new Promise<string>((resolve, reject) => {
         let request = https.request({
@@ -29,7 +29,7 @@ export function getWebviewContent(link: string, prepareHtmlForTemplate: (uri: Ur
             response.on('data', (data) => { html += data.toString(); });
             response.on('end', () => {
                 const topic = prepareHtmlForTemplate(uri, html);
-                resolve(HTML_TEMPLATE.replace('{0}', topic));
+                resolve(getHtmlTemplate(scripts).replace('{0}', topic));
             });
             response.on('error', (error) => { console.log(error); });
         });

@@ -9,9 +9,7 @@ import { replaceLinks } from '../getWebviewContent';
 
 const prepareHtmlForTemplate = (uri: Uri, html: string): string => {
     // because https://github.com/KhronosGroup/OpenGL-Refpages/issues/52
-    const fixedHtml = html.replace('<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"/>',
-        '<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>');
-    
+    const fixedHtml = html.replace('<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"/>','');
     const dom = new JSDOM(fixedHtml);
     let node = dom.window.document.querySelector('.refentry');
     if (node) {
@@ -24,9 +22,22 @@ const prepareHtmlForTemplate = (uri: Uri, html: string): string => {
     }
 }
 
+const scripts = `<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    MathML: {
+        extensions: ["content-mathml.js"]
+    },
+    tex2jax: {
+        inlineMath: [['$','$'], ['\\(','\\)']]
+    }
+});
+</script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+`
+
 export default class GLSLHoverProvider extends ShaderHoverProvider {
     constructor() {
-        super('glsl', prepareHtmlForTemplate);
+        super('glsl', prepareHtmlForTemplate, scripts);
     }
 
     public async provideHover(document: TextDocument, position: Position, token: CancellationToken): Promise<Hover> {

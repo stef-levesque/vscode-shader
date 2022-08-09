@@ -17,7 +17,7 @@ export abstract class ShaderHoverProvider implements HoverProvider {
         return `shader.openLink${this.language}`
     }
 
-    constructor(protected language: Language, prepareHtmlForTemplate: (uri: Uri, html: string) => string ) {
+    constructor(protected language: Language, prepareHtmlForTemplate: (uri: Uri, html: string) => string, scripts: string = '') {
         this._subscriptions.push(commands.registerCommand(this.openLinkCommand, async (link: string, newWindow: boolean) => {
             if (!this._panel) {
                 this._panel = window.createWebviewPanel(
@@ -47,7 +47,7 @@ export abstract class ShaderHoverProvider implements HoverProvider {
             this._panel.reveal();
             // And set its HTML content
             try {
-                const html = await getWebviewContent(link, prepareHtmlForTemplate);
+                const html = await getWebviewContent(link, prepareHtmlForTemplate, scripts);
                 this._panel.webview.html = html;
             } catch (e) {
                 console.error(e);
