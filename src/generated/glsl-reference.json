@@ -107,7 +107,7 @@
         },
         {
           "label": "data",
-          "documentation": "The data to be added to <parameter>mem</parameter>."
+          "documentation": "The data to be added to `mem`."
         }
       ],
       "link": "https://registry.khronos.org/OpenGL-Refpages/es3/html/atomicAdd.xhtml"
@@ -121,7 +121,7 @@
         },
         {
           "label": "data",
-          "documentation": "The data to be logically ANDed with to <parameter>mem</parameter>."
+          "documentation": "The data to be logically ANDed with to `mem`."
         }
       ],
       "link": "https://registry.khronos.org/OpenGL-Refpages/es3/html/atomicAnd.xhtml"
@@ -135,7 +135,7 @@
         },
         {
           "label": "data",
-          "documentation": "The data to be compared and potentially exchanged with <parameter>mem</parameter>."
+          "documentation": "The data to be compared and potentially exchanged with `mem`."
         }
       ],
       "link": "https://registry.khronos.org/OpenGL-Refpages/es3/html/atomicCompSwap.xhtml"
@@ -179,7 +179,7 @@
         },
         {
           "label": "data",
-          "documentation": "The data to be exchanged with <parameter>mem</parameter>."
+          "documentation": "The data to be exchanged with `mem`."
         }
       ],
       "link": "https://registry.khronos.org/OpenGL-Refpages/es3/html/atomicExchange.xhtml"
@@ -193,7 +193,7 @@
         },
         {
           "label": "data",
-          "documentation": "The data to be compared to <parameter>mem</parameter>."
+          "documentation": "The data to be compared to `mem`."
         }
       ],
       "link": "https://registry.khronos.org/OpenGL-Refpages/es3/html/atomicMax.xhtml"
@@ -207,7 +207,7 @@
         },
         {
           "label": "data",
-          "documentation": "The data to be compared to <parameter>mem</parameter>."
+          "documentation": "The data to be compared to `mem`."
         }
       ],
       "link": "https://registry.khronos.org/OpenGL-Refpages/es3/html/atomicMin.xhtml"
@@ -221,7 +221,7 @@
         },
         {
           "label": "data",
-          "documentation": "The data to be logically ORed with to <parameter>mem</parameter>."
+          "documentation": "The data to be logically ORed with to `mem`."
         }
       ],
       "link": "https://registry.khronos.org/OpenGL-Refpages/es3/html/atomicOr.xhtml"
@@ -235,7 +235,7 @@
         },
         {
           "label": "data",
-          "documentation": "The data to be logically exclusive ORed with to <parameter>mem</parameter>."
+          "documentation": "The data to be logically exclusive ORed with to `mem`."
         }
       ],
       "link": "https://registry.khronos.org/OpenGL-Refpages/es3/html/atomicXor.xhtml"
@@ -278,7 +278,7 @@
       "parameters": [
         {
           "label": "base",
-          "documentation": "Specifies the integer into which to insert <parameter>insert</parameter>."
+          "documentation": "Specifies the integer into which to insert `insert`."
         },
         {
           "label": "insert",
@@ -324,11 +324,11 @@
         },
         {
           "label": "minVal",
-          "documentation": "Specify the lower end of the range into which to constrain <parameter>x</parameter>."
+          "documentation": "Specify the lower end of the range into which to constrain `x`."
         },
         {
           "label": "maxVal",
-          "documentation": "Specify the upper end of the range into which to constrain <parameter>x</parameter>."
+          "documentation": "Specify the upper end of the range into which to constrain `x`."
         }
       ],
       "link": "https://registry.khronos.org/OpenGL-Refpages/es3/html/clamp.xhtml"
@@ -747,7 +747,7 @@
       "parameters": [
         {
           "label": "image",
-          "documentation": "Specify the image unit into which to add <parameter>data</parameter>."
+          "documentation": "Specify the image unit into which to add `data`."
         },
         {
           "label": "P",
@@ -765,7 +765,7 @@
       "parameters": [
         {
           "label": "image",
-          "documentation": "Specify the image unit into which to store <parameter>data</parameter>."
+          "documentation": "Specify the image unit into which to store `data`."
         },
         {
           "label": "P",
@@ -783,7 +783,7 @@
       "parameters": [
         {
           "label": "image",
-          "documentation": "Specify the image unit into which to compare and conditionally store <parameter>data</parameter>."
+          "documentation": "Specify the image unit into which to compare and conditionally store `data`."
         },
         {
           "label": "P",
@@ -799,7 +799,7 @@
         },
         {
           "label": "data",
-          "documentation": "Specifies the value to store in the image if <parameter>compare</parameter> is equal to the existing image content."
+          "documentation": "Specifies the value to store in the image if `compare` is equal to the existing image content."
         }
       ],
       "link": "https://registry.khronos.org/OpenGL-Refpages/es3/html/imageAtomicCompSwap.xhtml"
@@ -809,7 +809,7 @@
       "parameters": [
         {
           "label": "image",
-          "documentation": "Specify the image unit into which to store <parameter>data</parameter>."
+          "documentation": "Specify the image unit into which to store `data`."
         },
         {
           "label": "P",
@@ -827,7 +827,7 @@
       "parameters": [
         {
           "label": "image",
-          "documentation": "Specify the image unit into which to store <parameter>data</parameter>."
+          "documentation": "Specify the image unit into which to store `data`."
         },
         {
           "label": "P",
@@ -845,7 +845,7 @@
       "parameters": [
         {
           "label": "image",
-          "documentation": "Specify the image unit into which to store <parameter>data</parameter>."
+          "documentation": "Specify the image unit into which to store `data`."
         },
         {
           "label": "P",
@@ -863,7 +863,7 @@
       "parameters": [
         {
           "label": "image",
-          "documentation": "Specify the image unit into which to store <parameter>data</parameter>."
+          "documentation": "Specify the image unit into which to store `data`."
         },
         {
           "label": "P",
@@ -881,7 +881,7 @@
       "parameters": [
         {
           "label": "image",
-          "documentation": "Specify the image unit into which to store <parameter>data</parameter>."
+          "documentation": "Specify the image unit into which to store `data`."
         },
         {
           "label": "P",
@@ -965,7 +965,7 @@
         },
         {
           "label": "offset",
-          "documentation": "Specifies the offset from the center of the pixel at which to sample <parameter>interpolant</parameter>."
+          "documentation": "Specifies the offset from the center of the pixel at which to sample `interpolant`."
         }
       ],
       "link": "https://registry.khronos.org/OpenGL-Refpages/es3/html/interpolateAtOffset.xhtml"
@@ -975,11 +975,11 @@
       "parameters": [
         {
           "label": "interpolant",
-          "documentation": "Specifies the interpolant to be sampled at the location of sample <parameter>sample</parameter>."
+          "documentation": "Specifies the interpolant to be sampled at the location of sample `sample`."
         },
         {
           "label": "sample",
-          "documentation": "Specifies the index of the sample whose location will be used to sample <parameter>interpolant</parameter>."
+          "documentation": "Specifies the index of the sample whose location will be used to sample `interpolant`."
         }
       ],
       "link": "https://registry.khronos.org/OpenGL-Refpages/es3/html/interpolateAtSample.xhtml"
@@ -1176,7 +1176,7 @@
         },
         {
           "label": "a",
-          "documentation": "Specify the value to use to interpolate between <parameter>x</parameter> and <parameter>y</parameter>."
+          "documentation": "Specify the value to use to interpolate between `x</parameter> and <parameter>y`."
         }
       ],
       "link": "https://registry.khronos.org/OpenGL-Refpages/es3/html/mix.xhtml"
@@ -1282,11 +1282,11 @@
       "parameters": [
         {
           "label": "x",
-          "documentation": "Specify the value to raise to the power <parameter>y</parameter>."
+          "documentation": "Specify the value to raise to the power `y`."
         },
         {
           "label": "y",
-          "documentation": "Specify the power to which to raise <parameter>x</parameter>."
+          "documentation": "Specify the power to which to raise `x`."
         }
       ],
       "link": "https://registry.khronos.org/OpenGL-Refpages/es3/html/pow.xhtml"
@@ -1480,7 +1480,7 @@
         },
         {
           "label": "offset",
-          "documentation": "Specifies offset, in texels that will be applied to <parameter>P</parameter> before looking up the texel."
+          "documentation": "Specifies offset, in texels that will be applied to `P` before looking up the texel."
         }
       ],
       "link": "https://registry.khronos.org/OpenGL-Refpages/es3/html/texelFetchOffset.xhtml"
@@ -1550,7 +1550,7 @@
         },
         {
           "label": "offset",
-          "documentation": "Specifies the offset from the specified texture coordinate <parameter>P</parameter> from which the texels will be gathered."
+          "documentation": "Specifies the offset from the specified texture coordinate `P` from which the texels will be gathered."
         }
       ],
       "link": "https://registry.khronos.org/OpenGL-Refpages/es3/html/textureGatherOffset.xhtml"
@@ -1576,7 +1576,7 @@
         },
         {
           "label": "offsets",
-          "documentation": "Specifies an array of offsets from the specified texture coordinate <parameter>P</parameter> from which the texels will be gathered."
+          "documentation": "Specifies an array of offsets from the specified texture coordinate `P` from which the texels will be gathered."
         }
       ],
       "link": "https://registry.khronos.org/OpenGL-Refpages/es3/html/textureGatherOffsets.xhtml"
@@ -1594,11 +1594,11 @@
         },
         {
           "label": "dPdx",
-          "documentation": "Specifies the partial derivative of <parameter>P</parameter> with respect to window x."
+          "documentation": "Specifies the partial derivative of `P` with respect to window x."
         },
         {
           "label": "dPdy",
-          "documentation": "Specifies the partial derivative of <parameter>P</parameter> with respect to window y."
+          "documentation": "Specifies the partial derivative of `P` with respect to window y."
         }
       ],
       "link": "https://registry.khronos.org/OpenGL-Refpages/es3/html/textureGrad.xhtml"
@@ -1616,11 +1616,11 @@
         },
         {
           "label": "dPdx",
-          "documentation": "Specifies the partial derivative of <parameter>P</parameter> with respect to window x."
+          "documentation": "Specifies the partial derivative of `P` with respect to window x."
         },
         {
           "label": "dPdy",
-          "documentation": "Specifies the partial derivative of <parameter>P</parameter> with respect to window y."
+          "documentation": "Specifies the partial derivative of `P` with respect to window y."
         },
         {
           "label": "offset",
@@ -1664,7 +1664,7 @@
         },
         {
           "label": "offset",
-          "documentation": "Specifies the offset that will be applied to <parameter>P</parameter> before texels are fetched."
+          "documentation": "Specifies the offset that will be applied to `P` before texels are fetched."
         }
       ],
       "link": "https://registry.khronos.org/OpenGL-Refpages/es3/html/textureLodOffset.xhtml"
@@ -1682,7 +1682,7 @@
         },
         {
           "label": "offset",
-          "documentation": "Specifies offset, in texels that will be applied to <parameter>P</parameter> before looking up the texel."
+          "documentation": "Specifies offset, in texels that will be applied to `P` before looking up the texel."
         },
         {
           "label": "bias",
@@ -1722,11 +1722,11 @@
         },
         {
           "label": "dPdx",
-          "documentation": "Specifies the partial derivative of <parameter>P</parameter> with respect to window x."
+          "documentation": "Specifies the partial derivative of `P` with respect to window x."
         },
         {
           "label": "dPdy",
-          "documentation": "Specifies the partial derivative of <parameter>P</parameter> with respect to window y."
+          "documentation": "Specifies the partial derivative of `P` with respect to window y."
         }
       ],
       "link": "https://registry.khronos.org/OpenGL-Refpages/es3/html/textureProjGrad.xhtml"
@@ -1744,15 +1744,15 @@
         },
         {
           "label": "dPdx",
-          "documentation": "Specifies the partial derivative of <parameter>P</parameter> with respect to window x."
+          "documentation": "Specifies the partial derivative of `P` with respect to window x."
         },
         {
           "label": "dPdy",
-          "documentation": "Specifies the partial derivative of <parameter>P</parameter> with respect to window y."
+          "documentation": "Specifies the partial derivative of `P` with respect to window y."
         },
         {
           "label": "offset",
-          "documentation": "Specifies the offsets, in texels at which the texture will be sampled relative to the projection of <parameter>P</parameter>."
+          "documentation": "Specifies the offsets, in texels at which the texture will be sampled relative to the projection of `P`."
         }
       ],
       "link": "https://registry.khronos.org/OpenGL-Refpages/es3/html/textureProjGradOffset.xhtml"
@@ -1792,7 +1792,7 @@
         },
         {
           "label": "offset",
-          "documentation": "Specifies the offset, in texels, to be applied to <parameter>P</parameter> before fetching texels."
+          "documentation": "Specifies the offset, in texels, to be applied to `P` before fetching texels."
         }
       ],
       "link": "https://registry.khronos.org/OpenGL-Refpages/es3/html/textureProjLodOffset.xhtml"
@@ -1810,7 +1810,7 @@
         },
         {
           "label": "offset",
-          "documentation": "Specifies the offset that is applied to <parameter>P</parameter> before sampling occurs."
+          "documentation": "Specifies the offset that is applied to `P` before sampling occurs."
         },
         {
           "label": "bias",
