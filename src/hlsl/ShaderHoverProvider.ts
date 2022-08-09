@@ -1,7 +1,8 @@
 'use strict';
-import { HoverProvider, Hover, SymbolInformation, TextDocument, CancellationToken, Position, ViewColumn, Disposable, commands, window, WebviewPanel, ProviderResult } from 'vscode';
+import { HoverProvider, Hover, SymbolInformation, TextDocument, CancellationToken, Position, ViewColumn, Disposable, commands, window, WebviewPanel, ProviderResult, Uri } from 'vscode';
 import { getWebviewContent } from '../getWebviewContent';
 
+export type Language = 'hlsl' | 'glsl';
 
 export abstract class ShaderHoverProvider implements HoverProvider {
     abstract provideHover(document: TextDocument, position: Position, token: CancellationToken): ProviderResult<Hover>;
@@ -12,9 +13,12 @@ export abstract class ShaderHoverProvider implements HoverProvider {
         return commands.executeCommand<SymbolInformation[]>('vscode.executeDocumentSymbolProvider', document.uri);
     }
 
-    constructor(language: 'hlsl' | 'glsl') {
-        const openLinkCommand = `shader.openLink${language}`;
-        this._subscriptions.push(commands.registerCommand(openLinkCommand, (link: string, newWindow: boolean) => {
+    protected get openLinkCommand() {
+        return `shader.openLink${this.language}`
+    }
+
+    constructor(protected language: Language, prepareHtmlForTemplate: (uri: Uri, html: string) => string ) {
+        this._subscriptions.push(commands.registerCommand(this.openLinkCommand, async (link: string, newWindow: boolean) => {
             if (!this._panel) {
                 this._panel = window.createWebviewPanel(
                     `${language}doc`,
@@ -34,7 +38,7 @@ export abstract class ShaderHoverProvider implements HoverProvider {
                     message => {
                         switch (message.command) {
                             case 'clickLink':
-                                commands.executeCommand(openLinkCommand, message.text);
+                                commands.executeCommand(this.openLinkCommand, message.text);
                                 return;
                         }
                     }
@@ -42,7 +46,13 @@ export abstract class ShaderHoverProvider implements HoverProvider {
             }
             this._panel.reveal();
             // And set its HTML content
-            getWebviewContent(link).then(html => this._panel.webview.html = html);
+            try {
+                const html = await getWebviewContent(link, prepareHtmlForTemplate);
+                this._panel.webview.html = html;
+            } catch (e) {
+                console.error(e);
+            }
+            
         }));
 
     }

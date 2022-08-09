@@ -1,13 +1,32 @@
 'use strict';
 
-import { Hover, SymbolKind, MarkdownString, MarkedString, TextDocument, CancellationToken, Range, Position, workspace } from 'vscode';
+import { Hover, SymbolKind, MarkdownString, MarkedString, TextDocument, CancellationToken, Range, Position, workspace, Uri } from 'vscode';
 import { linkToMarkdownString, textToMarkedString } from '../markdown';
 import * as glslReference from '../generated/glsl-reference.json';
 import { ShaderHoverProvider } from '../hlsl/ShaderHoverProvider';
+import { JSDOM } from 'jsdom';
+import { replaceLinks } from '../getWebviewContent';
+
+const prepareHtmlForTemplate = (uri: Uri, html: string): string => {
+    // because https://github.com/KhronosGroup/OpenGL-Refpages/issues/52
+    const fixedHtml = html.replace('<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"/>',
+        '<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>');
+    
+    const dom = new JSDOM(fixedHtml);
+    let node = dom.window.document.querySelector('.refentry');
+    if (node) {
+        replaceLinks(node, dom, uri);
+        return node.outerHTML;
+
+    } else {
+        let link = uri.with({ scheme: 'https' }).toString();
+        return `<a href="${link}">No topic found, click to follow link</a>`;
+    }
+}
 
 export default class GLSLHoverProvider extends ShaderHoverProvider {
     constructor() {
-        super('glsl');
+        super('glsl', prepareHtmlForTemplate);
     }
 
     public async provideHover(document: TextDocument, position: Position, token: CancellationToken): Promise<Hover> {
@@ -34,19 +53,11 @@ export default class GLSLHoverProvider extends ShaderHoverProvider {
 
         var entry = glslReference.functions[name]
         if (entry && entry.description) {
-            let signature = '(*function*) ';
-            signature += '**' + name + '**';
-            signature += '(';
-            if (entry.parameters && entry.parameters.length != 0) {
-                let params = '';
-                entry.parameters.forEach(p => params += p.label + ',');
-                signature += params.slice(0, -1);
-            }
-            signature += ')';
+            const signature = `(*function*) **${name}**(${entry.parameters.map(p => p.label).join(',')})`;
             let contents: MarkedString[] = [];
             contents.push(new MarkdownString(signature));
             contents.push(textToMarkedString(entry.description));
-            contents.push(linkToMarkdownString(entry.link));
+            contents.push(linkToMarkdownString(entry.link, this.openLinkCommand, this.language));
             return new Hover(contents, wordRange);
         }
 

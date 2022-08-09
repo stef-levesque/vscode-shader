@@ -1,13 +1,30 @@
 'use strict';
 
-import { Hover, SymbolKind, MarkdownString, MarkedString, TextDocument, CancellationToken, Range, Position, workspace } from 'vscode';
+import { Hover, SymbolKind, MarkdownString, MarkedString, TextDocument, CancellationToken, Range, Position, workspace, Uri } from 'vscode';
 import hlslGlobals = require('./hlslGlobals');
 import { linkToMarkdownString, textToMarkedString } from '../markdown';
 import { ShaderHoverProvider } from './ShaderHoverProvider';
+import { JSDOM } from 'jsdom';
+import { replaceLinks } from '../getWebviewContent';
+
+const prepareHtmlForTemplate = (uri: Uri, html: string): string => {
+    const dom = new JSDOM(html);
+    let node = dom.window.document.querySelector('.content');
+    if (node) {
+        replaceLinks(node, dom, uri);
+        node.querySelector('.metadata.page-metadata')?.remove();
+        node.querySelector('#center-doc-outline')?.remove();
+        return node.outerHTML;
+
+    } else {
+        let link = uri.with({ scheme: 'https' }).toString();
+        return `<a href="${link}">No topic found, click to follow link</a>`;
+    }
+}
 
 export default class HLSLHoverProvider extends ShaderHoverProvider {
     constructor() {
-        super('hlsl');
+        super('hlsl', prepareHtmlForTemplate);
     }
     
     public async provideHover(document: TextDocument, position: Position, token: CancellationToken): Promise<Hover> {
@@ -38,7 +55,7 @@ export default class HLSLHoverProvider extends ShaderHoverProvider {
                 let contents: MarkedString[] = [];
                 contents.push(new MarkdownString(signature));
                 contents.push(textToMarkedString(entry.description));
-                contents.push(linkToMarkdownString(entry.link));
+                contents.push(linkToMarkdownString(entry.link, this.openLinkCommand, this.language));
                 return new Hover(contents, wordRange);
             }
         }
@@ -57,7 +74,7 @@ export default class HLSLHoverProvider extends ShaderHoverProvider {
             let contents: MarkedString[] = [];
             contents.push(new MarkdownString(signature));
             contents.push(textToMarkedString(entry.description));
-            contents.push(linkToMarkdownString(entry.link));
+            contents.push(linkToMarkdownString(entry.link, this.openLinkCommand, this.language));
             return new Hover(contents, wordRange);
         }
 
@@ -68,7 +85,7 @@ export default class HLSLHoverProvider extends ShaderHoverProvider {
             let contents: MarkedString[] = [];
             contents.push(new MarkdownString(signature));
             contents.push(textToMarkedString(entry.description));
-            contents.push(linkToMarkdownString(entry.link));
+            contents.push(linkToMarkdownString(entry.link, this.openLinkCommand, this.language));
             return new Hover(contents, wordRange);
         }
 
@@ -79,7 +96,7 @@ export default class HLSLHoverProvider extends ShaderHoverProvider {
             let contents: MarkedString[] = [];
             contents.push(new MarkdownString(signature));
             contents.push(textToMarkedString(entry.description));
-            contents.push(linkToMarkdownString(entry.link));
+            contents.push(linkToMarkdownString(entry.link, this.openLinkCommand, this.language));
             return new Hover(contents, wordRange);
         }
 
@@ -91,7 +108,7 @@ export default class HLSLHoverProvider extends ShaderHoverProvider {
             let contents: MarkedString[] = [];
             contents.push(new MarkdownString(signature));
             contents.push(textToMarkedString(entry.description));
-            contents.push(linkToMarkdownString(entry.link));
+            contents.push(linkToMarkdownString(entry.link, this.openLinkCommand, this.language));
             return new Hover(contents, wordRange);
         }
 
@@ -102,7 +119,7 @@ export default class HLSLHoverProvider extends ShaderHoverProvider {
             let contents: MarkedString[] = [];
             contents.push(new MarkdownString(signature));
             contents.push(textToMarkedString(entry.description));
-            contents.push(linkToMarkdownString(entry.link));
+            contents.push(linkToMarkdownString(entry.link, this.openLinkCommand, this.language));
             return new Hover(contents, wordRange);
         }
 
