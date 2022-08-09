@@ -1,6 +1,6 @@
 'use strict'
 
-export const HTML_TEMPLATE = `
+export const getHtmlTemplate = (scripts?: string) => `
 <!DOCTYPE html>
 <html>
 
@@ -206,6 +206,7 @@ export const HTML_TEMPLATE = `
             color: white !important
         }
     </STYLE>
+    ${scripts}
     <script>
     const vscode = acquireVsCodeApi();
     function clickLink(link) {

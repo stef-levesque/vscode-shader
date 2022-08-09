@@ -1,0 +1,1935 @@
+{
+  "functions": {
+    "abs": {
+      "description": "return the absolute value of the parameter",
+      "parameters": [
+        {
+          "label": "x",
+          "documentation": "Specify the value of which to return the absolute."
+        }
+      ],
+      "link": "https://registry.khronos.org/OpenGL-Refpages/es3/html/abs.xhtml"
+    },
+    "acos": {
+      "description": "return the arccosine of the parameter",
+      "parameters": [
+        {
+          "label": "x",
+          "documentation": "Specify the value whose arccosine to return."
+        }
+      ],
+      "link": "https://registry.khronos.org/OpenGL-Refpages/es3/html/acos.xhtml"
+    },
+    "acosh": {
+      "description": "return the arc hyperbolic cosine of the parameter",
+      "parameters": [
+        {
+          "label": "x",
+          "documentation": "Specify the value whose arc hyperbolic cosine to return."
+        }
+      ],
+      "link": "https://registry.khronos.org/OpenGL-Refpages/es3/html/acosh.xhtml"
+    },
+    "all": {
+      "description": "check whether all elements of a boolean vector are true",
+      "parameters": [
+        {
+          "label": "x",
+          "documentation": "Specifies the vector to be tested for truth."
+        }
+      ],
+      "link": "https://registry.khronos.org/OpenGL-Refpages/es3/html/all.xhtml"
+    },
+    "any": {
+      "description": "check whether any element of a boolean vector is true",
+      "parameters": [
+        {
+          "label": "x",
+          "documentation": "Specifies the vector to be tested for truth."
+        }
+      ],
+      "link": "https://registry.khronos.org/OpenGL-Refpages/es3/html/any.xhtml"
+    },
+    "asin": {
+      "description": "return the arcsine of the parameter",
+      "parameters": [
+        {
+          "label": "x",
+          "documentation": "Specify the value whose arcsine to return."
+        }
+      ],
+      "link": "https://registry.khronos.org/OpenGL-Refpages/es3/html/asin.xhtml"
+    },
+    "asinh": {
+      "description": "return the arc hyperbolic sine of the parameter",
+      "parameters": [
+        {
+          "label": "x",
+          "documentation": "Specify the value whose arc hyperbolic sine to return."
+        }
+      ],
+      "link": "https://registry.khronos.org/OpenGL-Refpages/es3/html/asinh.xhtml"
+    },
+    "atan": {
+      "description": "return the arc-tangent of the parameters",
+      "parameters": [
+        {
+          "label": "y",
+          "documentation": "Specify the numerator of the fraction whose arctangent to return."
+        },
+        {
+          "label": "x",
+          "documentation": "Specify the denominator of the fraction whose arctangent to return."
+        },
+        {
+          "label": "y_over_x",
+          "documentation": "Specify the fraction whose arctangent to return."
+        }
+      ],
+      "link": "https://registry.khronos.org/OpenGL-Refpages/es3/html/atan.xhtml"
+    },
+    "atanh": {
+      "description": "return the arc hyperbolic tangent of the parameter",
+      "parameters": [
+        {
+          "label": "x",
+          "documentation": "Specify the value whose arc hyperbolic tangent to return."
+        }
+      ],
+      "link": "https://registry.khronos.org/OpenGL-Refpages/es3/html/atanh.xhtml"
+    },
+    "atomicAdd": {
+      "description": "perform an atomic addition to a variable",
+      "parameters": [
+        {
+          "label": "mem",
+          "documentation": "The variable to use as the target of the operation."
+        },
+        {
+          "label": "data",
+          "documentation": "The data to be added to `mem`."
+        }
+      ],
+      "link": "https://registry.khronos.org/OpenGL-Refpages/es3/html/atomicAdd.xhtml"
+    },
+    "atomicAnd": {
+      "description": "perform an atomic logical AND operation to a variable",
+      "parameters": [
+        {
+          "label": "mem",
+          "documentation": "The variable to use as the target of the operation."
+        },
+        {
+          "label": "data",
+          "documentation": "The data to be logically ANDed with to `mem`."
+        }
+      ],
+      "link": "https://registry.khronos.org/OpenGL-Refpages/es3/html/atomicAnd.xhtml"
+    },
+    "atomicCompSwap": {
+      "description": "perform an atomic compare-exchange operation to a variable",
+      "parameters": [
+        {
+          "label": "mem",
+          "documentation": "The variable to use as the target of the operation."
+        },
+        {
+          "label": "data",
+          "documentation": "The data to be compared and potentially exchanged with `mem`."
+        }
+      ],
+      "link": "https://registry.khronos.org/OpenGL-Refpages/es3/html/atomicCompSwap.xhtml"
+    },
+    "atomicCounter": {
+      "description": "return the current value of an atomic counter",
+      "parameters": [
+        {
+          "label": "c",
+          "documentation": "Specify the handle to the atomic counter whose value to return."
+        }
+      ],
+      "link": "https://registry.khronos.org/OpenGL-Refpages/es3/html/atomicCounter.xhtml"
+    },
+    "atomicCounterDecrement": {
+      "description": "atomically decrement a counter and return the prior value",
+      "parameters": [
+        {
+          "label": "c",
+          "documentation": "Specify the handle to the atomic counter to decrement."
+        }
+      ],
+      "link": "https://registry.khronos.org/OpenGL-Refpages/es3/html/atomicCounterDecrement.xhtml"
+    },
+    "atomicCounterIncrement": {
+      "description": "atomically increment a counter and return the prior value",
+      "parameters": [
+        {
+          "label": "c",
+          "documentation": "Specify the handle to the atomic counter to increment."
+        }
+      ],
+      "link": "https://registry.khronos.org/OpenGL-Refpages/es3/html/atomicCounterIncrement.xhtml"
+    },
+    "atomicExchange": {
+      "description": "perform an atomic exchange operation to a variable",
+      "parameters": [
+        {
+          "label": "mem",
+          "documentation": "The variable to use as the target of the operation."
+        },
+        {
+          "label": "data",
+          "documentation": "The data to be exchanged with `mem`."
+        }
+      ],
+      "link": "https://registry.khronos.org/OpenGL-Refpages/es3/html/atomicExchange.xhtml"
+    },
+    "atomicMax": {
+      "description": "perform an atomic max operation to a variable",
+      "parameters": [
+        {
+          "label": "mem",
+          "documentation": "The variable to use as the target of the operation."
+        },
+        {
+          "label": "data",
+          "documentation": "The data to be compared to `mem`."
+        }
+      ],
+      "link": "https://registry.khronos.org/OpenGL-Refpages/es3/html/atomicMax.xhtml"
+    },
+    "atomicMin": {
+      "description": "perform an atomic min operation to a variable",
+      "parameters": [
+        {
+          "label": "mem",
+          "documentation": "The variable to use as the target of the operation."
+        },
+        {
+          "label": "data",
+          "documentation": "The data to be compared to `mem`."
+        }
+      ],
+      "link": "https://registry.khronos.org/OpenGL-Refpages/es3/html/atomicMin.xhtml"
+    },
+    "atomicOr": {
+      "description": "perform an atomic logical OR operation to a variable",
+      "parameters": [
+        {
+          "label": "mem",
+          "documentation": "The variable to use as the target of the operation."
+        },
+        {
+          "label": "data",
+          "documentation": "The data to be logically ORed with to `mem`."
+        }
+      ],
+      "link": "https://registry.khronos.org/OpenGL-Refpages/es3/html/atomicOr.xhtml"
+    },
+    "atomicXor": {
+      "description": "perform an atomic logical exclusive OR operation to a variable",
+      "parameters": [
+        {
+          "label": "mem",
+          "documentation": "The variable to use as the target of the operation."
+        },
+        {
+          "label": "data",
+          "documentation": "The data to be logically exclusive ORed with to `mem`."
+        }
+      ],
+      "link": "https://registry.khronos.org/OpenGL-Refpages/es3/html/atomicXor.xhtml"
+    },
+    "barrier": {
+      "description": "synchronize execution of multiple shader invocations",
+      "parameters": [],
+      "link": "https://registry.khronos.org/OpenGL-Refpages/es3/html/barrier.xhtml"
+    },
+    "bitCount": {
+      "description": "counts the number of 1 bits in an integer",
+      "parameters": [
+        {
+          "label": "value",
+          "documentation": "Specifies the value whose bits to count."
+        }
+      ],
+      "link": "https://registry.khronos.org/OpenGL-Refpages/es3/html/bitCount.xhtml"
+    },
+    "bitfieldExtract": {
+      "description": "extract a range of bits from an integer",
+      "parameters": [
+        {
+          "label": "value",
+          "documentation": "Specifies the integer from which to extract bits."
+        },
+        {
+          "label": "offset",
+          "documentation": "Specifies the index of the first bit to extract."
+        },
+        {
+          "label": "bits",
+          "documentation": "Specifies the number of bits to extract."
+        }
+      ],
+      "link": "https://registry.khronos.org/OpenGL-Refpages/es3/html/bitfieldExtract.xhtml"
+    },
+    "bitfieldInsert": {
+      "description": "insert a range of bits into an integer",
+      "parameters": [
+        {
+          "label": "base",
+          "documentation": "Specifies the integer into which to insert `insert`."
+        },
+        {
+          "label": "insert",
+          "documentation": "Specifies the value of the bits to insert."
+        },
+        {
+          "label": "offset",
+          "documentation": "Specifies the index of the first bit to insert."
+        },
+        {
+          "label": "bits",
+          "documentation": "Specifies the number of bits to insert."
+        }
+      ],
+      "link": "https://registry.khronos.org/OpenGL-Refpages/es3/html/bitfieldInsert.xhtml"
+    },
+    "bitfieldReverse": {
+      "description": "reverse the order of bits in an integer",
+      "parameters": [
+        {
+          "label": "value",
+          "documentation": "Specifies the value whose bits to reverse."
+        }
+      ],
+      "link": "https://registry.khronos.org/OpenGL-Refpages/es3/html/bitfieldReverse.xhtml"
+    },
+    "ceil": {
+      "description": "find the nearest integer that is greater than or equal to the parameter",
+      "parameters": [
+        {
+          "label": "x",
+          "documentation": "Specify the value to evaluate."
+        }
+      ],
+      "link": "https://registry.khronos.org/OpenGL-Refpages/es3/html/ceil.xhtml"
+    },
+    "clamp": {
+      "description": "constrain a value to lie between two further values",
+      "parameters": [
+        {
+          "label": "x",
+          "documentation": "Specify the value to constrain."
+        },
+        {
+          "label": "minVal",
+          "documentation": "Specify the lower end of the range into which to constrain `x`."
+        },
+        {
+          "label": "maxVal",
+          "documentation": "Specify the upper end of the range into which to constrain `x`."
+        }
+      ],
+      "link": "https://registry.khronos.org/OpenGL-Refpages/es3/html/clamp.xhtml"
+    },
+    "cos": {
+      "description": "return the cosine of the parameter",
+      "parameters": [
+        {
+          "label": "angle",
+          "documentation": "Specify the quantity, in radians, of which to return the cosine."
+        }
+      ],
+      "link": "https://registry.khronos.org/OpenGL-Refpages/es3/html/cos.xhtml"
+    },
+    "cosh": {
+      "description": "return the hyperbolic cosine of the parameter",
+      "parameters": [
+        {
+          "label": "x",
+          "documentation": "Specify the value whose hyperbolic cosine to return."
+        }
+      ],
+      "link": "https://registry.khronos.org/OpenGL-Refpages/es3/html/cosh.xhtml"
+    },
+    "cross": {
+      "description": "calculate the cross product of two vectors",
+      "parameters": [
+        {
+          "label": "x",
+          "documentation": "Specifies the first of two vectors"
+        },
+        {
+          "label": "y",
+          "documentation": "Specifies the second of two vectors"
+        }
+      ],
+      "link": "https://registry.khronos.org/OpenGL-Refpages/es3/html/cross.xhtml"
+    },
+    "dFdx,dFdy": {
+      "description": "return the partial derivative of an argument with respect to x or y",
+      "parameters": [
+        {
+          "label": "p",
+          "documentation": "Specifies the expression of which to take the partial derivative."
+        }
+      ],
+      "link": "https://registry.khronos.org/OpenGL-Refpages/es3/html/dFdx,dFdy.xhtml"
+    },
+    "degrees": {
+      "description": "convert a quantity in radians to degrees",
+      "parameters": [
+        {
+          "label": "radians",
+          "documentation": "Specify the quantity, in radians, to be converted to degrees."
+        }
+      ],
+      "link": "https://registry.khronos.org/OpenGL-Refpages/es3/html/degrees.xhtml"
+    },
+    "determinant": {
+      "description": "calculate the determinant of a matrix",
+      "parameters": [
+        {
+          "label": "m",
+          "documentation": "Specifies the matrix of which to take the determinant."
+        }
+      ],
+      "link": "https://registry.khronos.org/OpenGL-Refpages/es3/html/determinant.xhtml"
+    },
+    "distance": {
+      "description": "calculate the distance between two points",
+      "parameters": [
+        {
+          "label": "p0",
+          "documentation": "Specifies the first of two points"
+        },
+        {
+          "label": "p1",
+          "documentation": "Specifies the second of two points"
+        }
+      ],
+      "link": "https://registry.khronos.org/OpenGL-Refpages/es3/html/distance.xhtml"
+    },
+    "dot": {
+      "description": "calculate the dot product of two vectors",
+      "parameters": [
+        {
+          "label": "x",
+          "documentation": "Specifies the first of two vectors"
+        },
+        {
+          "label": "y",
+          "documentation": "Specifies the second of two vectors"
+        }
+      ],
+      "link": "https://registry.khronos.org/OpenGL-Refpages/es3/html/dot.xhtml"
+    },
+    "equal": {
+      "description": "perform a component-wise equal-to comparison of two vectors",
+      "parameters": [
+        {
+          "label": "x",
+          "documentation": "Specifies the first vector to be used in the comparison operation."
+        },
+        {
+          "label": "y",
+          "documentation": "Specifies the second vector to be used in the comparison operation."
+        }
+      ],
+      "link": "https://registry.khronos.org/OpenGL-Refpages/es3/html/equal.xhtml"
+    },
+    "exp": {
+      "description": "return the natural exponentiation of the parameter",
+      "parameters": [
+        {
+          "label": "x",
+          "documentation": "Specify the value to exponentiate."
+        }
+      ],
+      "link": "https://registry.khronos.org/OpenGL-Refpages/es3/html/exp.xhtml"
+    },
+    "exp2": {
+      "description": "return 2 raised to the power of the parameter",
+      "parameters": [
+        {
+          "label": "x",
+          "documentation": "Specify the value of the power to which 2 will be raised."
+        }
+      ],
+      "link": "https://registry.khronos.org/OpenGL-Refpages/es3/html/exp2.xhtml"
+    },
+    "faceforward": {
+      "description": "return a vector pointing in the same direction as another",
+      "parameters": [
+        {
+          "label": "N",
+          "documentation": "Specifies the vector to orient."
+        },
+        {
+          "label": "I",
+          "documentation": "Specifies the incident vector."
+        },
+        {
+          "label": "Nref",
+          "documentation": "Specifies the reference vector."
+        }
+      ],
+      "link": "https://registry.khronos.org/OpenGL-Refpages/es3/html/faceforward.xhtml"
+    },
+    "findLSB": {
+      "description": "find the index of the least significant bit set to 1 in an integer",
+      "parameters": [
+        {
+          "label": "value",
+          "documentation": "Specifies the value whose bits to scan."
+        }
+      ],
+      "link": "https://registry.khronos.org/OpenGL-Refpages/es3/html/findLSB.xhtml"
+    },
+    "findMSB": {
+      "description": "find the index of the most significant bit set to 1 in an integer",
+      "parameters": [
+        {
+          "label": "value",
+          "documentation": "Specifies the value whose bits to scan."
+        }
+      ],
+      "link": "https://registry.khronos.org/OpenGL-Refpages/es3/html/findMSB.xhtml"
+    },
+    "floatBitsToInt": {
+      "description": "produce the encoding of a floating point value as an integer",
+      "parameters": [
+        {
+          "label": "x",
+          "documentation": "Specifies the value whose floating point encoding to return."
+        }
+      ],
+      "link": "https://registry.khronos.org/OpenGL-Refpages/es3/html/floatBitsToInt.xhtml"
+    },
+    "floor": {
+      "description": "find the nearest integer less than or equal to the parameter",
+      "parameters": [
+        {
+          "label": "x",
+          "documentation": "Specify the value to evaluate."
+        }
+      ],
+      "link": "https://registry.khronos.org/OpenGL-Refpages/es3/html/floor.xhtml"
+    },
+    "fma": {
+      "description": "perform a fused multiply-add operation",
+      "parameters": [
+        {
+          "label": "a",
+          "documentation": "Specifies the first multiplicand."
+        },
+        {
+          "label": "b",
+          "documentation": "Specifies the second multiplicand."
+        },
+        {
+          "label": "c",
+          "documentation": "Specifies the value to be added to the result."
+        }
+      ],
+      "link": "https://registry.khronos.org/OpenGL-Refpages/es3/html/fma.xhtml"
+    },
+    "fract": {
+      "description": "compute the fractional part of the argument",
+      "parameters": [
+        {
+          "label": "x",
+          "documentation": "Specify the value to evaluate."
+        }
+      ],
+      "link": "https://registry.khronos.org/OpenGL-Refpages/es3/html/fract.xhtml"
+    },
+    "frexp": {
+      "description": "split a floating point number",
+      "parameters": [
+        {
+          "label": "x",
+          "documentation": "Specifies the value from which significand and exponent are to be extracted."
+        },
+        {
+          "label": "out exp",
+          "documentation": "Specifies the variable into which to place the exponent"
+        }
+      ],
+      "link": "https://registry.khronos.org/OpenGL-Refpages/es3/html/frexp.xhtml"
+    },
+    "fwidth": {
+      "description": "return the sum of the absolute derivatives in x and y",
+      "parameters": [
+        {
+          "label": "p",
+          "documentation": "Specifies the expression of which to take the partial derivative."
+        }
+      ],
+      "link": "https://registry.khronos.org/OpenGL-Refpages/es3/html/fwidth.xhtml"
+    },
+    "gl_BoundingBox": {
+      "description": "contains the bounding box primitives generated from the output patch",
+      "parameters": [],
+      "link": "https://registry.khronos.org/OpenGL-Refpages/es3/html/gl_BoundingBox.xhtml"
+    },
+    "gl_FragCoord": {
+      "description": "contains the window-relative coordinates of the current fragment",
+      "parameters": [],
+      "link": "https://registry.khronos.org/OpenGL-Refpages/es3/html/gl_FragCoord.xhtml"
+    },
+    "gl_FragDepth": {
+      "description": "establishes a depth value for the current fragment",
+      "parameters": [],
+      "link": "https://registry.khronos.org/OpenGL-Refpages/es3/html/gl_FragDepth.xhtml"
+    },
+    "gl_FrontFacing": {
+      "description": "indicates whether a primitive is front or back facing",
+      "parameters": [],
+      "link": "https://registry.khronos.org/OpenGL-Refpages/es3/html/gl_FrontFacing.xhtml"
+    },
+    "gl_GlobalInvocationID": {
+      "description": "contains the global index of work item currently being operated on by a compute shader",
+      "parameters": [],
+      "link": "https://registry.khronos.org/OpenGL-Refpages/es3/html/gl_GlobalInvocationID.xhtml"
+    },
+    "gl_InstanceID": {
+      "description": "contains the instance number of the current primitive in an instanced draw command",
+      "parameters": [],
+      "link": "https://registry.khronos.org/OpenGL-Refpages/es3/html/gl_InstanceID.xhtml"
+    },
+    "gl_InvocationID": {
+      "description": "contains the invocation index of the current shader",
+      "parameters": [],
+      "link": "https://registry.khronos.org/OpenGL-Refpages/es3/html/gl_InvocationID.xhtml"
+    },
+    "gl_Layer": {
+      "description": "contains the selected layer of a multi-layer framebuffer attachment",
+      "parameters": [],
+      "link": "https://registry.khronos.org/OpenGL-Refpages/es3/html/gl_Layer.xhtml"
+    },
+    "gl_LocalInvocationID": {
+      "description": "contains the index of work item currently being operated on by a compute shader",
+      "parameters": [],
+      "link": "https://registry.khronos.org/OpenGL-Refpages/es3/html/gl_LocalInvocationID.xhtml"
+    },
+    "gl_LocalInvocationIndex": {
+      "description": "contains the local linear index of work item currently being operated on by a compute shader",
+      "parameters": [],
+      "link": "https://registry.khronos.org/OpenGL-Refpages/es3/html/gl_LocalInvocationIndex.xhtml"
+    },
+    "gl_NumSamples": {
+      "description": "contains the total number of samples in the framebuffer",
+      "parameters": [],
+      "link": "https://registry.khronos.org/OpenGL-Refpages/es3/html/gl_NumSamples.xhtml"
+    },
+    "gl_NumWorkGroups": {
+      "description": "contains the number of workgroups that have been dispatched to a compute shader",
+      "parameters": [],
+      "link": "https://registry.khronos.org/OpenGL-Refpages/es3/html/gl_NumWorkGroups.xhtml"
+    },
+    "gl_PatchVerticesIn": {
+      "description": "contains the number of vertices in the current patch",
+      "parameters": [],
+      "link": "https://registry.khronos.org/OpenGL-Refpages/es3/html/gl_PatchVerticesIn.xhtml"
+    },
+    "gl_PointCoord": {
+      "description": "contains the coordinate of a fragment within a point",
+      "parameters": [],
+      "link": "https://registry.khronos.org/OpenGL-Refpages/es3/html/gl_PointCoord.xhtml"
+    },
+    "gl_PointSize": {
+      "description": "contains size of rasterized points, in pixels",
+      "parameters": [],
+      "link": "https://registry.khronos.org/OpenGL-Refpages/es3/html/gl_PointSize.xhtml"
+    },
+    "gl_Position": {
+      "description": "contains the position of the current vertex",
+      "parameters": [],
+      "link": "https://registry.khronos.org/OpenGL-Refpages/es3/html/gl_Position.xhtml"
+    },
+    "gl_PrimitiveID": {
+      "description": "contains the index of the current primitive",
+      "parameters": [],
+      "link": "https://registry.khronos.org/OpenGL-Refpages/es3/html/gl_PrimitiveID.xhtml"
+    },
+    "gl_PrimitiveIDIn": {
+      "description": "contains the index of the current primitive",
+      "parameters": [],
+      "link": "https://registry.khronos.org/OpenGL-Refpages/es3/html/gl_PrimitiveIDIn.xhtml"
+    },
+    "gl_SampleID": {
+      "description": "contains the index of the sample currently being processed",
+      "parameters": [],
+      "link": "https://registry.khronos.org/OpenGL-Refpages/es3/html/gl_SampleID.xhtml"
+    },
+    "gl_SampleMask": {
+      "description": "specifies the sample coverage mask for the current fragment",
+      "parameters": [],
+      "link": "https://registry.khronos.org/OpenGL-Refpages/es3/html/gl_SampleMask.xhtml"
+    },
+    "gl_SampleMaskIn": {
+      "description": "contains the computed sample coverage mask for the current fragment",
+      "parameters": [],
+      "link": "https://registry.khronos.org/OpenGL-Refpages/es3/html/gl_SampleMaskIn.xhtml"
+    },
+    "gl_SamplePosition": {
+      "description": "contains the location of the current sample within the current fragment",
+      "parameters": [],
+      "link": "https://registry.khronos.org/OpenGL-Refpages/es3/html/gl_SamplePosition.xhtml"
+    },
+    "gl_TessCoord": {
+      "description": "contains the coordinate of the vertex within the current patch",
+      "parameters": [],
+      "link": "https://registry.khronos.org/OpenGL-Refpages/es3/html/gl_TessCoord.xhtml"
+    },
+    "gl_TessLevelInner": {
+      "description": "contains the inner tessellation levels for the current patch",
+      "parameters": [],
+      "link": "https://registry.khronos.org/OpenGL-Refpages/es3/html/gl_TessLevelInner.xhtml"
+    },
+    "gl_TessLevelOuter": {
+      "description": "contains the outer tessellation levels for the current patch",
+      "parameters": [],
+      "link": "https://registry.khronos.org/OpenGL-Refpages/es3/html/gl_TessLevelOuter.xhtml"
+    },
+    "gl_VertexID": {
+      "description": "contains the index of the current vertex",
+      "parameters": [],
+      "link": "https://registry.khronos.org/OpenGL-Refpages/es3/html/gl_VertexID.xhtml"
+    },
+    "gl_WorkGroupID": {
+      "description": "contains the index of the workgroup currently being operated on by a compute shader",
+      "parameters": [],
+      "link": "https://registry.khronos.org/OpenGL-Refpages/es3/html/gl_WorkGroupID.xhtml"
+    },
+    "gl_WorkGroupSize": {
+      "description": "contains the size of the workgroup operated on by a compute shader",
+      "parameters": [],
+      "link": "https://registry.khronos.org/OpenGL-Refpages/es3/html/gl_WorkGroupSize.xhtml"
+    },
+    "greaterThan": {
+      "description": "perform a component-wise greater-than comparison of two vectors",
+      "parameters": [
+        {
+          "label": "x",
+          "documentation": "Specifies the first vector to be used in the comparison operation."
+        },
+        {
+          "label": "y",
+          "documentation": "Specifies the second vector to be used in the comparison operation."
+        }
+      ],
+      "link": "https://registry.khronos.org/OpenGL-Refpages/es3/html/greaterThan.xhtml"
+    },
+    "greaterThanEqual": {
+      "description": "perform a component-wise greater-than-or-equal comparison of two vectors",
+      "parameters": [
+        {
+          "label": "x",
+          "documentation": "Specifies the first vector to be used in the comparison operation."
+        },
+        {
+          "label": "y",
+          "documentation": "Specifies the second vector to be used in the comparison operation."
+        }
+      ],
+      "link": "https://registry.khronos.org/OpenGL-Refpages/es3/html/greaterThanEqual.xhtml"
+    },
+    "groupMemoryBarrier": {
+      "description": "controls the ordering of memory transaction issued shader invocation relative to a work group",
+      "parameters": [],
+      "link": "https://registry.khronos.org/OpenGL-Refpages/es3/html/groupMemoryBarrier.xhtml"
+    },
+    "imageAtomicAdd": {
+      "description": "atomically add a value to an existing value in memory and return the original value",
+      "parameters": [
+        {
+          "label": "image",
+          "documentation": "Specify the image unit into which to add `data`."
+        },
+        {
+          "label": "P",
+          "documentation": "Specify the coordinate at which to add the data."
+        },
+        {
+          "label": "data",
+          "documentation": "Specifies the data to add into the image."
+        }
+      ],
+      "link": "https://registry.khronos.org/OpenGL-Refpages/es3/html/imageAtomicAdd.xhtml"
+    },
+    "imageAtomicAnd": {
+      "description": "atomically compute the logical AND of a value with an existing value in memory, store that value and return the original value",
+      "parameters": [
+        {
+          "label": "image",
+          "documentation": "Specify the image unit into which to store `data`."
+        },
+        {
+          "label": "P",
+          "documentation": "Specify the coordinate at which to store the data."
+        },
+        {
+          "label": "data",
+          "documentation": "Specifies the data to logically AND into the image."
+        }
+      ],
+      "link": "https://registry.khronos.org/OpenGL-Refpages/es3/html/imageAtomicAnd.xhtml"
+    },
+    "imageAtomicCompSwap": {
+      "description": "atomically compares supplied data with that in memory and conditionally stores it to memory",
+      "parameters": [
+        {
+          "label": "image",
+          "documentation": "Specify the image unit into which to compare and conditionally store `data`."
+        },
+        {
+          "label": "P",
+          "documentation": "Specify the coordinate at which to compare and conditionally store the data."
+        },
+        {
+          "label": "sample",
+          "documentation": "When present, specifies the sample within the image to compare and conditionally store into."
+        },
+        {
+          "label": "compare",
+          "documentation": "Specifies the value to compare with the content of the image."
+        },
+        {
+          "label": "data",
+          "documentation": "Specifies the value to store in the image if `compare` is equal to the existing image content."
+        }
+      ],
+      "link": "https://registry.khronos.org/OpenGL-Refpages/es3/html/imageAtomicCompSwap.xhtml"
+    },
+    "imageAtomicExchange": {
+      "description": "atomically store supplied data into memory and return the original value from memory",
+      "parameters": [
+        {
+          "label": "image",
+          "documentation": "Specify the image unit into which to store `data`."
+        },
+        {
+          "label": "P",
+          "documentation": "Specify the coordinate at which to store the data."
+        },
+        {
+          "label": "data",
+          "documentation": "Specifies the data to exchange with that stored in the image."
+        }
+      ],
+      "link": "https://registry.khronos.org/OpenGL-Refpages/es3/html/imageAtomicExchange.xhtml"
+    },
+    "imageAtomicMax": {
+      "description": "atomically compute the maximum of a value with an existing value in memory, store that value and return the original value",
+      "parameters": [
+        {
+          "label": "image",
+          "documentation": "Specify the image unit into which to store `data`."
+        },
+        {
+          "label": "P",
+          "documentation": "Specify the coordinate at which to store the data."
+        },
+        {
+          "label": "data",
+          "documentation": "Specifies the data of which to take the maximum with that stored in the image."
+        }
+      ],
+      "link": "https://registry.khronos.org/OpenGL-Refpages/es3/html/imageAtomicMax.xhtml"
+    },
+    "imageAtomicMin": {
+      "description": "atomically compute the minimum of a value with an existing value in memory, store that value and return the original value",
+      "parameters": [
+        {
+          "label": "image",
+          "documentation": "Specify the image unit into which to store `data`."
+        },
+        {
+          "label": "P",
+          "documentation": "Specify the coordinate at which to store the data."
+        },
+        {
+          "label": "data",
+          "documentation": "Specifies the data of which to take the minimum with that stored in the image."
+        }
+      ],
+      "link": "https://registry.khronos.org/OpenGL-Refpages/es3/html/imageAtomicMin.xhtml"
+    },
+    "imageAtomicOr": {
+      "description": "atomically compute the logical OR of a value with an existing value in memory, store that value and return the original value",
+      "parameters": [
+        {
+          "label": "image",
+          "documentation": "Specify the image unit into which to store `data`."
+        },
+        {
+          "label": "P",
+          "documentation": "Specify the coordinate at which to store the data."
+        },
+        {
+          "label": "data",
+          "documentation": "Specifies the data to logically OR into the image."
+        }
+      ],
+      "link": "https://registry.khronos.org/OpenGL-Refpages/es3/html/imageAtomicOr.xhtml"
+    },
+    "imageAtomicXor": {
+      "description": "atomically compute the logical exclusive OR of a value with an existing value in memory, store that value and return the original value",
+      "parameters": [
+        {
+          "label": "image",
+          "documentation": "Specify the image unit into which to store `data`."
+        },
+        {
+          "label": "P",
+          "documentation": "Specify the coordinate at which to store the data."
+        },
+        {
+          "label": "data",
+          "documentation": "Specifies the data to logically XOR into the image."
+        }
+      ],
+      "link": "https://registry.khronos.org/OpenGL-Refpages/es3/html/imageAtomicXor.xhtml"
+    },
+    "imageLoad": {
+      "description": "load a single texel from an image",
+      "parameters": [
+        {
+          "label": "image",
+          "documentation": "Specify the image unit from which to load a texel."
+        },
+        {
+          "label": "P",
+          "documentation": "Specify the coordinate from which to load the texel."
+        }
+      ],
+      "link": "https://registry.khronos.org/OpenGL-Refpages/es3/html/imageLoad.xhtml"
+    },
+    "imageSize": {
+      "description": "retrieve the dimensions of an image",
+      "parameters": [
+        {
+          "label": "image",
+          "documentation": "Specifies the image to which the texture whose dimensions to retrieve is bound."
+        }
+      ],
+      "link": "https://registry.khronos.org/OpenGL-Refpages/es3/html/imageSize.xhtml"
+    },
+    "imageStore": {
+      "description": "write a single texel into an image",
+      "parameters": [
+        {
+          "label": "image",
+          "documentation": "Specify the image unit into which to store a texel."
+        },
+        {
+          "label": "P",
+          "documentation": "Specify the coordinate at which to store the texel."
+        },
+        {
+          "label": "data",
+          "documentation": "Specifies the data to store into the image."
+        }
+      ],
+      "link": "https://registry.khronos.org/OpenGL-Refpages/es3/html/imageStore.xhtml"
+    },
+    "intBitsToFloat,uintBitsToFloat": {
+      "description": "produce a floating point using an encoding supplied as an integer",
+      "parameters": [
+        {
+          "label": "x",
+          "documentation": "Specifies the bit encoding to return as a floating point value."
+        }
+      ],
+      "link": "https://registry.khronos.org/OpenGL-Refpages/es3/html/intBitsToFloat,uintBitsToFloat.xhtml"
+    },
+    "interpolateAtCentroid": {
+      "description": "sample a varying at the centroid of a pixel",
+      "parameters": [
+        {
+          "label": "interpolant",
+          "documentation": "Specifies the interpolant to be sampled at the pixel centroid."
+        }
+      ],
+      "link": "https://registry.khronos.org/OpenGL-Refpages/es3/html/interpolateAtCentroid.xhtml"
+    },
+    "interpolateAtOffset": {
+      "description": "sample a varying at specified offset from the center of a pixel",
+      "parameters": [
+        {
+          "label": "interpolant",
+          "documentation": "Specifies the interpolant to be sampled at the specified offset."
+        },
+        {
+          "label": "offset",
+          "documentation": "Specifies the offset from the center of the pixel at which to sample `interpolant`."
+        }
+      ],
+      "link": "https://registry.khronos.org/OpenGL-Refpages/es3/html/interpolateAtOffset.xhtml"
+    },
+    "interpolateAtSample": {
+      "description": "sample a varying at the location of a specified sample",
+      "parameters": [
+        {
+          "label": "interpolant",
+          "documentation": "Specifies the interpolant to be sampled at the location of sample `sample`."
+        },
+        {
+          "label": "sample",
+          "documentation": "Specifies the index of the sample whose location will be used to sample `interpolant`."
+        }
+      ],
+      "link": "https://registry.khronos.org/OpenGL-Refpages/es3/html/interpolateAtSample.xhtml"
+    },
+    "inverse": {
+      "description": "calculate the inverse of a matrix",
+      "parameters": [
+        {
+          "label": "m",
+          "documentation": "Specifies the matrix of which to take the inverse."
+        }
+      ],
+      "link": "https://registry.khronos.org/OpenGL-Refpages/es3/html/inverse.xhtml"
+    },
+    "inversesqrt": {
+      "description": "return the inverse of the square root of the parameter",
+      "parameters": [
+        {
+          "label": "x",
+          "documentation": "Specify the value of which to take the inverse of the square root."
+        }
+      ],
+      "link": "https://registry.khronos.org/OpenGL-Refpages/es3/html/inversesqrt.xhtml"
+    },
+    "isinf": {
+      "description": "determine whether the parameter is positive or negative infinity",
+      "parameters": [
+        {
+          "label": "x",
+          "documentation": "Specifies the value to test for infinity."
+        }
+      ],
+      "link": "https://registry.khronos.org/OpenGL-Refpages/es3/html/isinf.xhtml"
+    },
+    "isnan": {
+      "description": "determine whether the parameter is a number",
+      "parameters": [
+        {
+          "label": "x",
+          "documentation": "Specifies the value to test for NaN."
+        }
+      ],
+      "link": "https://registry.khronos.org/OpenGL-Refpages/es3/html/isnan.xhtml"
+    },
+    "ldexp": {
+      "description": "assemble a floating point number from a value and exponent",
+      "parameters": [
+        {
+          "label": "x",
+          "documentation": "Specifies the value to be used as a source of significand."
+        },
+        {
+          "label": "exp",
+          "documentation": "Specifies the value to be used as a source of exponent."
+        }
+      ],
+      "link": "https://registry.khronos.org/OpenGL-Refpages/es3/html/ldexp.xhtml"
+    },
+    "length": {
+      "description": "calculate the length of a vector",
+      "parameters": [
+        {
+          "label": "x",
+          "documentation": "Specifies a vector of which to calculate the length."
+        }
+      ],
+      "link": "https://registry.khronos.org/OpenGL-Refpages/es3/html/length.xhtml"
+    },
+    "lessThan": {
+      "description": "perform a component-wise less-than comparison of two vectors",
+      "parameters": [
+        {
+          "label": "x",
+          "documentation": "Specifies the first vector to be used in the comparison operation."
+        },
+        {
+          "label": "y",
+          "documentation": "Specifies the second vector to be used in the comparison operation."
+        }
+      ],
+      "link": "https://registry.khronos.org/OpenGL-Refpages/es3/html/lessThan.xhtml"
+    },
+    "lessThanEqual": {
+      "description": "perform a component-wise less-than-or-equal comparison of two vectors",
+      "parameters": [
+        {
+          "label": "x",
+          "documentation": "Specifies the first vector to be used in the comparison operation."
+        },
+        {
+          "label": "y",
+          "documentation": "Specifies the second vector to be used in the comparison operation."
+        }
+      ],
+      "link": "https://registry.khronos.org/OpenGL-Refpages/es3/html/lessThanEqual.xhtml"
+    },
+    "log": {
+      "description": "return the natural logarithm of the parameter",
+      "parameters": [
+        {
+          "label": "x",
+          "documentation": "Specify the value of which to take the natural logarithm."
+        }
+      ],
+      "link": "https://registry.khronos.org/OpenGL-Refpages/es3/html/log.xhtml"
+    },
+    "log2": {
+      "description": "return the base 2 logarithm of the parameter",
+      "parameters": [
+        {
+          "label": "x",
+          "documentation": "Specify the value of which to take the base 2 logarithm."
+        }
+      ],
+      "link": "https://registry.khronos.org/OpenGL-Refpages/es3/html/log2.xhtml"
+    },
+    "matrixCompMult": {
+      "description": "perform a component-wise multiplication of two matrices",
+      "parameters": [
+        {
+          "label": "x",
+          "documentation": "Specifies the first matrix multiplicand."
+        },
+        {
+          "label": "y",
+          "documentation": "Specifies the second matrix multiplicand."
+        }
+      ],
+      "link": "https://registry.khronos.org/OpenGL-Refpages/es3/html/matrixCompMult.xhtml"
+    },
+    "max": {
+      "description": "return the greater of two values",
+      "parameters": [
+        {
+          "label": "x",
+          "documentation": "Specify the first value to compare."
+        },
+        {
+          "label": "y",
+          "documentation": "Specify the second value to compare."
+        }
+      ],
+      "link": "https://registry.khronos.org/OpenGL-Refpages/es3/html/max.xhtml"
+    },
+    "memoryBarrier": {
+      "description": "controls the ordering of memory transactions issued by a single shader invocation",
+      "parameters": [],
+      "link": "https://registry.khronos.org/OpenGL-Refpages/es3/html/memoryBarrier.xhtml"
+    },
+    "memoryBarrierAtomicCounter": {
+      "description": "controls the ordering of operations on atomic counters issued by a single shader invocation",
+      "parameters": [],
+      "link": "https://registry.khronos.org/OpenGL-Refpages/es3/html/memoryBarrierAtomicCounter.xhtml"
+    },
+    "memoryBarrierBuffer": {
+      "description": "controls the ordering of operations on buffer variables issued by a single shader invocation",
+      "parameters": [],
+      "link": "https://registry.khronos.org/OpenGL-Refpages/es3/html/memoryBarrierBuffer.xhtml"
+    },
+    "memoryBarrierImage": {
+      "description": "controls the ordering of operations on image variables issued by a single shader invocation",
+      "parameters": [],
+      "link": "https://registry.khronos.org/OpenGL-Refpages/es3/html/memoryBarrierImage.xhtml"
+    },
+    "memoryBarrierShared": {
+      "description": "controls the ordering of operations on shared variables issued by a single shader invocation",
+      "parameters": [],
+      "link": "https://registry.khronos.org/OpenGL-Refpages/es3/html/memoryBarrierShared.xhtml"
+    },
+    "min": {
+      "description": "return the lesser of two values",
+      "parameters": [
+        {
+          "label": "x",
+          "documentation": "Specify the first value to compare."
+        },
+        {
+          "label": "y",
+          "documentation": "Specify the second value to compare."
+        }
+      ],
+      "link": "https://registry.khronos.org/OpenGL-Refpages/es3/html/min.xhtml"
+    },
+    "mix": {
+      "description": "linearly interpolate between two values",
+      "parameters": [
+        {
+          "label": "x",
+          "documentation": "Specify the start of the range in which to interpolate."
+        },
+        {
+          "label": "y",
+          "documentation": "Specify the end of the range in which to interpolate."
+        },
+        {
+          "label": "a",
+          "documentation": "Specify the value to use to interpolate between `x</parameter> and <parameter>y`."
+        }
+      ],
+      "link": "https://registry.khronos.org/OpenGL-Refpages/es3/html/mix.xhtml"
+    },
+    "mod": {
+      "description": "compute value of one parameter modulo another",
+      "parameters": [
+        {
+          "label": "x",
+          "documentation": "Specify the value to evaluate."
+        },
+        {
+          "label": "y",
+          "documentation": "Specify the value by which to perform the modulo."
+        }
+      ],
+      "link": "https://registry.khronos.org/OpenGL-Refpages/es3/html/mod.xhtml"
+    },
+    "modf": {
+      "description": "separate a value into its integer and fractional components",
+      "parameters": [
+        {
+          "label": "x",
+          "documentation": "Specify the value to separate."
+        },
+        {
+          "label": "out i",
+          "documentation": "A variable that receives the integer part of the argument."
+        }
+      ],
+      "link": "https://registry.khronos.org/OpenGL-Refpages/es3/html/modf.xhtml"
+    },
+    "normalize": {
+      "description": "calculates the unit vector in the same direction as the original vector",
+      "parameters": [
+        {
+          "label": "v",
+          "documentation": "Specifies the vector to normalize."
+        }
+      ],
+      "link": "https://registry.khronos.org/OpenGL-Refpages/es3/html/normalize.xhtml"
+    },
+    "not": {
+      "description": "logically invert a boolean vector",
+      "parameters": [
+        {
+          "label": "x",
+          "documentation": "Specifies the vector to be inverted."
+        }
+      ],
+      "link": "https://registry.khronos.org/OpenGL-Refpages/es3/html/not.xhtml"
+    },
+    "notEqual": {
+      "description": "perform a component-wise not-equal-to comparison of two vectors",
+      "parameters": [
+        {
+          "label": "x",
+          "documentation": "Specifies the first vector to be used in the comparison operation."
+        },
+        {
+          "label": "y",
+          "documentation": "Specifies the second vector to be used in the comparison operation."
+        }
+      ],
+      "link": "https://registry.khronos.org/OpenGL-Refpages/es3/html/notEqual.xhtml"
+    },
+    "outerProduct": {
+      "description": "calculate the outer product of a pair of vectors",
+      "parameters": [
+        {
+          "label": "c",
+          "documentation": "Specifies the parameter to be treated as a column vector."
+        },
+        {
+          "label": "r",
+          "documentation": "Specifies the parameter to be treated as a row vector."
+        }
+      ],
+      "link": "https://registry.khronos.org/OpenGL-Refpages/es3/html/outerProduct.xhtml"
+    },
+    "packHalf2x16": {
+      "description": "convert two 32-bit floating-point quantities to 16-bit quantities and pack them into a single 32-bit integer",
+      "parameters": [
+        {
+          "label": "v",
+          "documentation": "Specify a vector of two 32-bit floating point values that are to be converted to 16-bit representation and packed into the result."
+        }
+      ],
+      "link": "https://registry.khronos.org/OpenGL-Refpages/es3/html/packHalf2x16.xhtml"
+    },
+    "packUnorm2x16,packSnorm2x16,packUnorm4x8,packSnorm4x8": {
+      "description": "pack floating-point values into an unsigned integer",
+      "parameters": [
+        {
+          "label": "v",
+          "documentation": "Specifies a vector of values to be packed into an unsigned integer."
+        }
+      ],
+      "link": "https://registry.khronos.org/OpenGL-Refpages/es3/html/packUnorm2x16,packSnorm2x16,packUnorm4x8,packSnorm4x8.xhtml"
+    },
+    "pow": {
+      "description": "return the value of the first parameter raised to the power of the second",
+      "parameters": [
+        {
+          "label": "x",
+          "documentation": "Specify the value to raise to the power `y`."
+        },
+        {
+          "label": "y",
+          "documentation": "Specify the power to which to raise `x`."
+        }
+      ],
+      "link": "https://registry.khronos.org/OpenGL-Refpages/es3/html/pow.xhtml"
+    },
+    "radians": {
+      "description": "convert a quantity in degrees to radians",
+      "parameters": [
+        {
+          "label": "degrees",
+          "documentation": "Specify the quantity, in degrees, to be converted to radians."
+        }
+      ],
+      "link": "https://registry.khronos.org/OpenGL-Refpages/es3/html/radians.xhtml"
+    },
+    "reflect": {
+      "description": "calculate the reflection direction for an incident vector",
+      "parameters": [
+        {
+          "label": "I",
+          "documentation": "Specifies the incident vector."
+        },
+        {
+          "label": "N",
+          "documentation": "Specifies the normal vector."
+        }
+      ],
+      "link": "https://registry.khronos.org/OpenGL-Refpages/es3/html/reflect.xhtml"
+    },
+    "refract": {
+      "description": "calculate the refraction direction for an incident vector",
+      "parameters": [
+        {
+          "label": "I",
+          "documentation": "Specifies the incident vector."
+        },
+        {
+          "label": "N",
+          "documentation": "Specifies the normal vector."
+        },
+        {
+          "label": "eta",
+          "documentation": "Specifies the ratio of indices of refraction."
+        }
+      ],
+      "link": "https://registry.khronos.org/OpenGL-Refpages/es3/html/refract.xhtml"
+    },
+    "round": {
+      "description": "find the nearest integer to the parameter",
+      "parameters": [
+        {
+          "label": "x",
+          "documentation": "Specify the value to evaluate."
+        }
+      ],
+      "link": "https://registry.khronos.org/OpenGL-Refpages/es3/html/round.xhtml"
+    },
+    "roundEven": {
+      "description": "find the nearest even integer to the parameter",
+      "parameters": [
+        {
+          "label": "x",
+          "documentation": "Specify the value to evaluate."
+        }
+      ],
+      "link": "https://registry.khronos.org/OpenGL-Refpages/es3/html/roundEven.xhtml"
+    },
+    "sign": {
+      "description": "extract the sign of the parameter",
+      "parameters": [
+        {
+          "label": "x",
+          "documentation": "Specify the value from which to extract the sign."
+        }
+      ],
+      "link": "https://registry.khronos.org/OpenGL-Refpages/es3/html/sign.xhtml"
+    },
+    "sin": {
+      "description": "return the sine of the parameter",
+      "parameters": [
+        {
+          "label": "angle",
+          "documentation": "Specify the quantity, in radians, of which to return the sine."
+        }
+      ],
+      "link": "https://registry.khronos.org/OpenGL-Refpages/es3/html/sin.xhtml"
+    },
+    "sinh": {
+      "description": "return the hyperbolic sine of the parameter",
+      "parameters": [
+        {
+          "label": "x",
+          "documentation": "Specify the value whose hyperbolic sine to return."
+        }
+      ],
+      "link": "https://registry.khronos.org/OpenGL-Refpages/es3/html/sinh.xhtml"
+    },
+    "smoothstep": {
+      "description": "perform Hermite interpolation between two values",
+      "parameters": [
+        {
+          "label": "edge0",
+          "documentation": "Specifies the value of the lower edge of the Hermite function."
+        },
+        {
+          "label": "edge1",
+          "documentation": "Specifies the value of the upper edge of the Hermite function."
+        },
+        {
+          "label": "x",
+          "documentation": "Specifies the source value for interpolation."
+        }
+      ],
+      "link": "https://registry.khronos.org/OpenGL-Refpages/es3/html/smoothstep.xhtml"
+    },
+    "sqrt": {
+      "description": "return the square root of the parameter",
+      "parameters": [
+        {
+          "label": "x",
+          "documentation": "Specify the value of which to take the square root."
+        }
+      ],
+      "link": "https://registry.khronos.org/OpenGL-Refpages/es3/html/sqrt.xhtml"
+    },
+    "step": {
+      "description": "generate a step function by comparing two values",
+      "parameters": [
+        {
+          "label": "edge",
+          "documentation": "Specifies the location of the edge of the step function."
+        },
+        {
+          "label": "x",
+          "documentation": "Specify the value to be used to generate the step function."
+        }
+      ],
+      "link": "https://registry.khronos.org/OpenGL-Refpages/es3/html/step.xhtml"
+    },
+    "tan": {
+      "description": "return the tangent of the parameter",
+      "parameters": [
+        {
+          "label": "angle",
+          "documentation": "Specify the quantity, in radians, of which to return the tangent."
+        }
+      ],
+      "link": "https://registry.khronos.org/OpenGL-Refpages/es3/html/tan.xhtml"
+    },
+    "tanh": {
+      "description": "return the hyperbolic tangent of the parameter",
+      "parameters": [
+        {
+          "label": "x",
+          "documentation": "Specify the value whose hyperbolic tangent to return."
+        }
+      ],
+      "link": "https://registry.khronos.org/OpenGL-Refpages/es3/html/tanh.xhtml"
+    },
+    "texelFetch": {
+      "description": "perform a lookup of a single texel within a texture",
+      "parameters": [
+        {
+          "label": "P",
+          "documentation": "Specifies the texture coordinates at which texture will be sampled."
+        },
+        {
+          "label": "lod",
+          "documentation": "If present, specifies the level-of-detail within the texture from which the texel will be fetched."
+        },
+        {
+          "label": "sample",
+          "documentation": "For multisampled fetches, specifies which sample within the texel from which the data will be returned."
+        }
+      ],
+      "link": "https://registry.khronos.org/OpenGL-Refpages/es3/html/texelFetch.xhtml"
+    },
+    "texelFetchOffset": {
+      "description": "perform a lookup of a single texel within a texture with an offset",
+      "parameters": [
+        {
+          "label": "sampler",
+          "documentation": "Specifies the sampler to which the texture from which texels will be retrieved is bound."
+        },
+        {
+          "label": "P",
+          "documentation": "Specifies the texture coordinates at which texture will be sampled."
+        },
+        {
+          "label": "lod",
+          "documentation": "If present, specifies the level-of-detail within the texture from which the texel will be fetched."
+        },
+        {
+          "label": "offset",
+          "documentation": "Specifies offset, in texels that will be applied to `P` before looking up the texel."
+        }
+      ],
+      "link": "https://registry.khronos.org/OpenGL-Refpages/es3/html/texelFetchOffset.xhtml"
+    },
+    "texture": {
+      "description": "retrieves texels from a texture",
+      "parameters": [
+        {
+          "label": "sampler",
+          "documentation": "Specifies the sampler to which the texture from which texels will be retrieved is bound."
+        },
+        {
+          "label": "P",
+          "documentation": "Specifies the texture coordinates at which texture will be sampled."
+        },
+        {
+          "label": "bias",
+          "documentation": "Specifies an optional bias to be applied during level-of-detail computation."
+        },
+        {
+          "label": "compare",
+          "documentation": "When present, specifies the reference for shadow comparisons."
+        }
+      ],
+      "link": "https://registry.khronos.org/OpenGL-Refpages/es3/html/texture.xhtml"
+    },
+    "textureGather": {
+      "description": "gathers four texels from a texture",
+      "parameters": [
+        {
+          "label": "sampler",
+          "documentation": "Specifies the sampler to which the texture from which texels will be retrieved is bound."
+        },
+        {
+          "label": "P",
+          "documentation": "Specifies the texture coordinates at which texture will be sampled."
+        },
+        {
+          "label": "comp",
+          "documentation": "Specifies the component of the source texture that will be used to generate the resulting vector."
+        },
+        {
+          "label": "refZ",
+          "documentation": "Specifies the reference Z value used in the comparison for shadow forms."
+        }
+      ],
+      "link": "https://registry.khronos.org/OpenGL-Refpages/es3/html/textureGather.xhtml"
+    },
+    "textureGatherOffset": {
+      "description": "gathers four texels from a texture with offset",
+      "parameters": [
+        {
+          "label": "sampler",
+          "documentation": "Specifies the sampler to which the texture from which texels will be retrieved is bound."
+        },
+        {
+          "label": "P",
+          "documentation": "Specifies the texture coordinates at which texture will be sampled."
+        },
+        {
+          "label": "comp",
+          "documentation": "Specifies the component of the source texture that will be used to generate the resulting vector."
+        },
+        {
+          "label": "refZ",
+          "documentation": "Specifies the reference Z value used in the comparison for shadow forms."
+        },
+        {
+          "label": "offset",
+          "documentation": "Specifies the offset from the specified texture coordinate `P` from which the texels will be gathered."
+        }
+      ],
+      "link": "https://registry.khronos.org/OpenGL-Refpages/es3/html/textureGatherOffset.xhtml"
+    },
+    "textureGatherOffsets": {
+      "description": "gathers four texels from a texture with an array of offsets",
+      "parameters": [
+        {
+          "label": "sampler",
+          "documentation": "Specifies the sampler to which the texture from which texels will be retrieved is bound."
+        },
+        {
+          "label": "P",
+          "documentation": "Specifies the texture coordinates at which texture will be sampled."
+        },
+        {
+          "label": "comp",
+          "documentation": "Specifies the component of the source texture that will be used to generate the resulting vector."
+        },
+        {
+          "label": "refZ",
+          "documentation": "Specifies the reference Z value used in the comparison for shadow forms."
+        },
+        {
+          "label": "offsets",
+          "documentation": "Specifies an array of offsets from the specified texture coordinate `P` from which the texels will be gathered."
+        }
+      ],
+      "link": "https://registry.khronos.org/OpenGL-Refpages/es3/html/textureGatherOffsets.xhtml"
+    },
+    "textureGrad": {
+      "description": "perform a texture lookup with explicit gradients",
+      "parameters": [
+        {
+          "label": "sampler",
+          "documentation": "Specifies the sampler to which the texture from which texels will be retrieved is bound."
+        },
+        {
+          "label": "P",
+          "documentation": "Specifies the texture coordinates at which texture will be sampled."
+        },
+        {
+          "label": "dPdx",
+          "documentation": "Specifies the partial derivative of `P` with respect to window x."
+        },
+        {
+          "label": "dPdy",
+          "documentation": "Specifies the partial derivative of `P` with respect to window y."
+        }
+      ],
+      "link": "https://registry.khronos.org/OpenGL-Refpages/es3/html/textureGrad.xhtml"
+    },
+    "textureGradOffset": {
+      "description": "perform a texture lookup with explicit gradients and offset",
+      "parameters": [
+        {
+          "label": "sampler",
+          "documentation": "Specifies the sampler to which the texture from which texels will be retrieved is bound."
+        },
+        {
+          "label": "P",
+          "documentation": "Specifies the texture coordinates at which texture will be sampled."
+        },
+        {
+          "label": "dPdx",
+          "documentation": "Specifies the partial derivative of `P` with respect to window x."
+        },
+        {
+          "label": "dPdy",
+          "documentation": "Specifies the partial derivative of `P` with respect to window y."
+        },
+        {
+          "label": "offset",
+          "documentation": "Specifies the offset to be applied to the texture coordinates before sampling."
+        }
+      ],
+      "link": "https://registry.khronos.org/OpenGL-Refpages/es3/html/textureGradOffset.xhtml"
+    },
+    "textureLod": {
+      "description": "perform a texture lookup with explicit level-of-detail",
+      "parameters": [
+        {
+          "label": "sampler",
+          "documentation": "Specifies the sampler to which the texture from which texels will be retrieved is bound."
+        },
+        {
+          "label": "P",
+          "documentation": "Specifies the texture coordinates at which texture will be sampled."
+        },
+        {
+          "label": "lod",
+          "documentation": "Specifies the explicit level-of-detail"
+        }
+      ],
+      "link": "https://registry.khronos.org/OpenGL-Refpages/es3/html/textureLod.xhtml"
+    },
+    "textureLodOffset": {
+      "description": "perform a texture lookup with explicit level-of-detail and offset",
+      "parameters": [
+        {
+          "label": "sampler",
+          "documentation": "Specifies the sampler to which the texture from which texels will be retrieved is bound."
+        },
+        {
+          "label": "P",
+          "documentation": "Specifies the texture coordinates at which the texture will be sampled."
+        },
+        {
+          "label": "lod",
+          "documentation": "Specifies the explicit level-of-detail from which texels will be fetched."
+        },
+        {
+          "label": "offset",
+          "documentation": "Specifies the offset that will be applied to `P` before texels are fetched."
+        }
+      ],
+      "link": "https://registry.khronos.org/OpenGL-Refpages/es3/html/textureLodOffset.xhtml"
+    },
+    "textureOffset": {
+      "description": "perform a texture lookup with offset",
+      "parameters": [
+        {
+          "label": "sampler",
+          "documentation": "Specifies the sampler to which the texture from which texels will be retrieved is bound."
+        },
+        {
+          "label": "P",
+          "documentation": "Specifies the texture coordinates at which texture will be sampled."
+        },
+        {
+          "label": "offset",
+          "documentation": "Specifies offset, in texels that will be applied to `P` before looking up the texel."
+        },
+        {
+          "label": "bias",
+          "documentation": "Specifies an optional bias to be applied during level-of-detail computation."
+        }
+      ],
+      "link": "https://registry.khronos.org/OpenGL-Refpages/es3/html/textureOffset.xhtml"
+    },
+    "textureProj": {
+      "description": "perform a texture lookup with projection",
+      "parameters": [
+        {
+          "label": "sampler",
+          "documentation": "Specifies the sampler to which the texture from which texels will be retrieved is bound."
+        },
+        {
+          "label": "P",
+          "documentation": "Specifies the texture coordinates at which texture will be sampled."
+        },
+        {
+          "label": "bias",
+          "documentation": "Specifies an optional bias to be applied during level-of-detail computation."
+        }
+      ],
+      "link": "https://registry.khronos.org/OpenGL-Refpages/es3/html/textureProj.xhtml"
+    },
+    "textureProjGrad": {
+      "description": "perform a texture lookup with projection and explicit gradients",
+      "parameters": [
+        {
+          "label": "sampler",
+          "documentation": "Specifies the sampler to which the texture from which texels will be retrieved is bound."
+        },
+        {
+          "label": "P",
+          "documentation": "Specifies the texture coordinates at which texture will be sampled."
+        },
+        {
+          "label": "dPdx",
+          "documentation": "Specifies the partial derivative of `P` with respect to window x."
+        },
+        {
+          "label": "dPdy",
+          "documentation": "Specifies the partial derivative of `P` with respect to window y."
+        }
+      ],
+      "link": "https://registry.khronos.org/OpenGL-Refpages/es3/html/textureProjGrad.xhtml"
+    },
+    "textureProjGradOffset": {
+      "description": "perform a texture lookup with projection, explicit gradients and offset",
+      "parameters": [
+        {
+          "label": "sampler",
+          "documentation": "Specifies the sampler to which the texture from which texels will be retrieved is bound."
+        },
+        {
+          "label": "P",
+          "documentation": "Specifies the texture coordinates at which texture will be sampled."
+        },
+        {
+          "label": "dPdx",
+          "documentation": "Specifies the partial derivative of `P` with respect to window x."
+        },
+        {
+          "label": "dPdy",
+          "documentation": "Specifies the partial derivative of `P` with respect to window y."
+        },
+        {
+          "label": "offset",
+          "documentation": "Specifies the offsets, in texels at which the texture will be sampled relative to the projection of `P`."
+        }
+      ],
+      "link": "https://registry.khronos.org/OpenGL-Refpages/es3/html/textureProjGradOffset.xhtml"
+    },
+    "textureProjLod": {
+      "description": "perform a texture lookup with projection and explicit level-of-detail",
+      "parameters": [
+        {
+          "label": "sampler",
+          "documentation": "Specifies the sampler to which the texture from which texels will be retrieved is bound."
+        },
+        {
+          "label": "P",
+          "documentation": "Specifies the texture coordinates at which texture will be sampled."
+        },
+        {
+          "label": "lod",
+          "documentation": "Specifies the explicit level-of-detail from which to fetch texels."
+        }
+      ],
+      "link": "https://registry.khronos.org/OpenGL-Refpages/es3/html/textureProjLod.xhtml"
+    },
+    "textureProjLodOffset": {
+      "description": "perform a texture lookup with projection and explicit level-of-detail and offset",
+      "parameters": [
+        {
+          "label": "sampler",
+          "documentation": "Specifies the sampler to which the texture from which texels will be retrieved is bound."
+        },
+        {
+          "label": "P",
+          "documentation": "Specifies the texture coordinates at which texture will be sampled."
+        },
+        {
+          "label": "lod",
+          "documentation": "Specifies the explicit level-of-detail from which to fetch texels."
+        },
+        {
+          "label": "offset",
+          "documentation": "Specifies the offset, in texels, to be applied to `P` before fetching texels."
+        }
+      ],
+      "link": "https://registry.khronos.org/OpenGL-Refpages/es3/html/textureProjLodOffset.xhtml"
+    },
+    "textureProjOffset": {
+      "description": "perform a texture lookup with projection and offset",
+      "parameters": [
+        {
+          "label": "sampler",
+          "documentation": "Specifies the sampler to which the texture from which texels will be retrieved is bound."
+        },
+        {
+          "label": "P",
+          "documentation": "Specifies the texture coordinates at which the texture will be sampled."
+        },
+        {
+          "label": "offset",
+          "documentation": "Specifies the offset that is applied to `P` before sampling occurs."
+        },
+        {
+          "label": "bias",
+          "documentation": "Specifies an optional bias to be applied during level-of-detail computation."
+        }
+      ],
+      "link": "https://registry.khronos.org/OpenGL-Refpages/es3/html/textureProjOffset.xhtml"
+    },
+    "textureSize": {
+      "description": "retrieve the dimensions of a level of a texture",
+      "parameters": [
+        {
+          "label": "sampler",
+          "documentation": "Specifies the sampler to which the texture whose dimensions to retrieve is bound."
+        },
+        {
+          "label": "lod",
+          "documentation": "Specifies the level of the texture for which to retrieve the dimensions."
+        }
+      ],
+      "link": "https://registry.khronos.org/OpenGL-Refpages/es3/html/textureSize.xhtml"
+    },
+    "transpose": {
+      "description": "calculate the transpose of a matrix",
+      "parameters": [
+        {
+          "label": "m",
+          "documentation": "Specifies the matrix of which to take the transpose."
+        }
+      ],
+      "link": "https://registry.khronos.org/OpenGL-Refpages/es3/html/transpose.xhtml"
+    },
+    "trunc": {
+      "description": "find the truncated value of the parameter",
+      "parameters": [
+        {
+          "label": "x",
+          "documentation": "Specify the value to evaluate."
+        }
+      ],
+      "link": "https://registry.khronos.org/OpenGL-Refpages/es3/html/trunc.xhtml"
+    },
+    "uaddCarry": {
+      "description": "add unsigned integers and generate carry",
+      "parameters": [
+        {
+          "label": "x",
+          "documentation": "Specifies the first vector to be used in the summation operation."
+        },
+        {
+          "label": "y",
+          "documentation": "Specifies the second vector to be used in the summation operation."
+        },
+        {
+          "label": "carry",
+          "documentation": "Specifies the variable to receive the carry output of the sum."
+        }
+      ],
+      "link": "https://registry.khronos.org/OpenGL-Refpages/es3/html/uaddCarry.xhtml"
+    },
+    "umulExtended": {
+      "description": "perform a 32- by 32-bit multiply to produce a 64-bit result",
+      "parameters": [
+        {
+          "label": "x",
+          "documentation": "Specifies the first multiplicand."
+        },
+        {
+          "label": "y",
+          "documentation": "Specifies the second multiplicand.."
+        },
+        {
+          "label": "msb",
+          "documentation": "Specifies the variable to receive the most significant word of the product."
+        },
+        {
+          "label": "lsb",
+          "documentation": "Specifies the variable to receive the least significant word of the product."
+        }
+      ],
+      "link": "https://registry.khronos.org/OpenGL-Refpages/es3/html/umulExtended.xhtml"
+    },
+    "unpackHalf2x16": {
+      "description": "convert two 16-bit floating-point values packed into a single 32-bit integer into a vector of two 32-bit floating-point quantities",
+      "parameters": [
+        {
+          "label": "v",
+          "documentation": "Specify a single 32-bit unsigned integer values that contains two 16-bit floating point values to be unpacked."
+        }
+      ],
+      "link": "https://registry.khronos.org/OpenGL-Refpages/es3/html/unpackHalf2x16.xhtml"
+    },
+    "unpackUnorm2x16,unpackSnorm2x16,unpackUnorm4x8,unpackSnorm4x8": {
+      "description": "unpack floating-point values from an unsigned integer",
+      "parameters": [
+        {
+          "label": "p",
+          "documentation": "Specifies an unsigned integer containing packed floating-point values."
+        }
+      ],
+      "link": "https://registry.khronos.org/OpenGL-Refpages/es3/html/unpackUnorm2x16,unpackSnorm2x16,unpackUnorm4x8,unpackSnorm4x8.xhtml"
+    },
+    "usubBorrow": {
+      "description": "subtract unsigned integers and generate borrow",
+      "parameters": [
+        {
+          "label": "x",
+          "documentation": "Specifies the first vector to be used in the subtraction operation."
+        },
+        {
+          "label": "y",
+          "documentation": "Specifies the second vector to be used in the subtraction operation."
+        },
+        {
+          "label": "borrow",
+          "documentation": "Specifies the variable to receive the borrow output of the difference."
+        }
+      ],
+      "link": "https://registry.khronos.org/OpenGL-Refpages/es3/html/usubBorrow.xhtml"
+    }
+  }
+}
