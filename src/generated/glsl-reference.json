@@ -1,0 +1,481 @@
+{
+  "functions": {
+    "abs": {
+      "description": "return the absolute value of the parameter"
+    },
+    "acos": {
+      "description": "return the arccosine of the parameter"
+    },
+    "acosh": {
+      "description": "return the arc hyperbolic cosine of the parameter"
+    },
+    "all": {
+      "description": "check whether all elements of a boolean vector are true"
+    },
+    "any": {
+      "description": "check whether any element of a boolean vector is true"
+    },
+    "asin": {
+      "description": "return the arcsine of the parameter"
+    },
+    "asinh": {
+      "description": "return the arc hyperbolic sine of the parameter"
+    },
+    "atan": {
+      "description": "return the arc-tangent of the parameters"
+    },
+    "atanh": {
+      "description": "return the arc hyperbolic tangent of the parameter"
+    },
+    "atomicAdd": {
+      "description": "perform an atomic addition to a variable"
+    },
+    "atomicAnd": {
+      "description": "perform an atomic logical AND operation to a variable"
+    },
+    "atomicCompSwap": {
+      "description": "perform an atomic compare-exchange operation to a variable"
+    },
+    "atomicCounter": {
+      "description": "return the current value of an atomic counter"
+    },
+    "atomicCounterDecrement": {
+      "description": "atomically decrement a counter and return the prior value"
+    },
+    "atomicCounterIncrement": {
+      "description": "atomically increment a counter and return the prior value"
+    },
+    "atomicExchange": {
+      "description": "perform an atomic exchange operation to a variable"
+    },
+    "atomicMax": {
+      "description": "perform an atomic max operation to a variable"
+    },
+    "atomicMin": {
+      "description": "perform an atomic min operation to a variable"
+    },
+    "atomicOr": {
+      "description": "perform an atomic logical OR operation to a variable"
+    },
+    "atomicXor": {
+      "description": "perform an atomic logical exclusive OR operation to a variable"
+    },
+    "barrier": {
+      "description": "synchronize execution of multiple shader invocations"
+    },
+    "bitCount": {
+      "description": "counts the number of 1 bits in an integer"
+    },
+    "bitfieldExtract": {
+      "description": "extract a range of bits from an integer"
+    },
+    "bitfieldInsert": {
+      "description": "insert a range of bits into an integer"
+    },
+    "bitfieldReverse": {
+      "description": "reverse the order of bits in an integer"
+    },
+    "ceil": {
+      "description": "find the nearest integer that is greater than or equal to the parameter"
+    },
+    "clamp": {
+      "description": "constrain a value to lie between two further values"
+    },
+    "cos": {
+      "description": "return the cosine of the parameter"
+    },
+    "cosh": {
+      "description": "return the hyperbolic cosine of the parameter"
+    },
+    "cross": {
+      "description": "calculate the cross product of two vectors"
+    },
+    "dFdx,dFdy": {
+      "description": "return the partial derivative of an argument with respect to x or y"
+    },
+    "degrees": {
+      "description": "convert a quantity in radians to degrees"
+    },
+    "determinant": {
+      "description": "calculate the determinant of a matrix"
+    },
+    "distance": {
+      "description": "calculate the distance between two points"
+    },
+    "dot": {
+      "description": "calculate the dot product of two vectors"
+    },
+    "equal": {
+      "description": "perform a component-wise equal-to comparison of two vectors"
+    },
+    "exp": {
+      "description": "return the natural exponentiation of the parameter"
+    },
+    "exp2": {
+      "description": "return 2 raised to the power of the parameter"
+    },
+    "faceforward": {
+      "description": "return a vector pointing in the same direction as another"
+    },
+    "findLSB": {
+      "description": "find the index of the least significant bit set to 1 in an integer"
+    },
+    "findMSB": {
+      "description": "find the index of the most significant bit set to 1 in an integer"
+    },
+    "floatBitsToInt": {
+      "description": "produce the encoding of a floating point value as an integer"
+    },
+    "floor": {
+      "description": "find the nearest integer less than or equal to the parameter"
+    },
+    "fma": {
+      "description": "perform a fused multiply-add operation"
+    },
+    "fract": {
+      "description": "compute the fractional part of the argument"
+    },
+    "frexp": {
+      "description": "split a floating point number"
+    },
+    "fwidth": {
+      "description": "return the sum of the absolute derivatives in x and y"
+    },
+    "gl_BoundingBox": {
+      "description": "contains the bounding box primitives generated from the output patch"
+    },
+    "gl_FragCoord": {
+      "description": "contains the window-relative coordinates of the current fragment"
+    },
+    "gl_FragDepth": {
+      "description": "establishes a depth value for the current fragment"
+    },
+    "gl_FrontFacing": {
+      "description": "indicates whether a primitive is front or back facing"
+    },
+    "gl_GlobalInvocationID": {
+      "description": "contains the global index of work item currently being operated on by a compute shader"
+    },
+    "gl_InstanceID": {
+      "description": "contains the instance number of the current primitive in an instanced draw command"
+    },
+    "gl_InvocationID": {
+      "description": "contains the invocation index of the current shader"
+    },
+    "gl_Layer": {
+      "description": "contains the selected layer of a multi-layer framebuffer attachment"
+    },
+    "gl_LocalInvocationID": {
+      "description": "contains the index of work item currently being operated on by a compute shader"
+    },
+    "gl_LocalInvocationIndex": {
+      "description": "contains the local linear index of work item currently being operated on by a compute shader"
+    },
+    "gl_NumSamples": {
+      "description": "contains the total number of samples in the framebuffer"
+    },
+    "gl_NumWorkGroups": {
+      "description": "contains the number of workgroups that have been dispatched to a compute shader"
+    },
+    "gl_PatchVerticesIn": {
+      "description": "contains the number of vertices in the current patch"
+    },
+    "gl_PointCoord": {
+      "description": "contains the coordinate of a fragment within a point"
+    },
+    "gl_PointSize": {
+      "description": "contains size of rasterized points, in pixels"
+    },
+    "gl_Position": {
+      "description": "contains the position of the current vertex"
+    },
+    "gl_PrimitiveID": {
+      "description": "contains the index of the current primitive"
+    },
+    "gl_PrimitiveIDIn": {
+      "description": "contains the index of the current primitive"
+    },
+    "gl_SampleID": {
+      "description": "contains the index of the sample currently being processed"
+    },
+    "gl_SampleMask": {
+      "description": "specifies the sample coverage mask for the current fragment"
+    },
+    "gl_SampleMaskIn": {
+      "description": "contains the computed sample coverage mask for the current fragment"
+    },
+    "gl_SamplePosition": {
+      "description": "contains the location of the current sample within the current fragment"
+    },
+    "gl_TessCoord": {
+      "description": "contains the coordinate of the vertex within the current patch"
+    },
+    "gl_TessLevelInner": {
+      "description": "contains the inner tessellation levels for the current patch"
+    },
+    "gl_TessLevelOuter": {
+      "description": "contains the outer tessellation levels for the current patch"
+    },
+    "gl_VertexID": {
+      "description": "contains the index of the current vertex"
+    },
+    "gl_WorkGroupID": {
+      "description": "contains the index of the workgroup currently being operated on by a compute shader"
+    },
+    "gl_WorkGroupSize": {
+      "description": "contains the size of the workgroup operated on by a compute shader"
+    },
+    "greaterThan": {
+      "description": "perform a component-wise greater-than comparison of two vectors"
+    },
+    "greaterThanEqual": {
+      "description": "perform a component-wise greater-than-or-equal comparison of two vectors"
+    },
+    "groupMemoryBarrier": {
+      "description": "controls the ordering of memory transaction issued shader invocation relative to a work group"
+    },
+    "imageAtomicAdd": {
+      "description": "atomically add a value to an existing value in memory and return the original value"
+    },
+    "imageAtomicAnd": {
+      "description": "atomically compute the logical AND of a value with an existing value in memory, store that value and return the original value"
+    },
+    "imageAtomicCompSwap": {
+      "description": "atomically compares supplied data with that in memory and conditionally stores it to memory"
+    },
+    "imageAtomicExchange": {
+      "description": "atomically store supplied data into memory and return the original value from memory"
+    },
+    "imageAtomicMax": {
+      "description": "atomically compute the maximum of a value with an existing value in memory, store that value and return the original value"
+    },
+    "imageAtomicMin": {
+      "description": "atomically compute the minimum of a value with an existing value in memory, store that value and return the original value"
+    },
+    "imageAtomicOr": {
+      "description": "atomically compute the logical OR of a value with an existing value in memory, store that value and return the original value"
+    },
+    "imageAtomicXor": {
+      "description": "atomically compute the logical exclusive OR of a value with an existing value in memory, store that value and return the original value"
+    },
+    "imageLoad": {
+      "description": "load a single texel from an image"
+    },
+    "imageSize": {
+      "description": "retrieve the dimensions of an image"
+    },
+    "imageStore": {
+      "description": "write a single texel into an image"
+    },
+    "intBitsToFloat,uintBitsToFloat": {
+      "description": "produce a floating point using an encoding supplied as an integer"
+    },
+    "interpolateAtCentroid": {
+      "description": "sample a varying at the centroid of a pixel"
+    },
+    "interpolateAtOffset": {
+      "description": "sample a varying at specified offset from the center of a pixel"
+    },
+    "interpolateAtSample": {
+      "description": "sample a varying at the location of a specified sample"
+    },
+    "inverse": {
+      "description": "calculate the inverse of a matrix"
+    },
+    "inversesqrt": {
+      "description": "return the inverse of the square root of the parameter"
+    },
+    "isinf": {
+      "description": "determine whether the parameter is positive or negative infinity"
+    },
+    "isnan": {
+      "description": "determine whether the parameter is a number"
+    },
+    "ldexp": {
+      "description": "assemble a floating point number from a value and exponent"
+    },
+    "length": {
+      "description": "calculate the length of a vector"
+    },
+    "lessThan": {
+      "description": "perform a component-wise less-than comparison of two vectors"
+    },
+    "lessThanEqual": {
+      "description": "perform a component-wise less-than-or-equal comparison of two vectors"
+    },
+    "log": {
+      "description": "return the natural logarithm of the parameter"
+    },
+    "log2": {
+      "description": "return the base 2 logarithm of the parameter"
+    },
+    "matrixCompMult": {
+      "description": "perform a component-wise multiplication of two matrices"
+    },
+    "max": {
+      "description": "return the greater of two values"
+    },
+    "memoryBarrier": {
+      "description": "controls the ordering of memory transactions issued by a single shader invocation"
+    },
+    "memoryBarrierAtomicCounter": {
+      "description": "controls the ordering of operations on atomic counters issued by a single shader invocation"
+    },
+    "memoryBarrierBuffer": {
+      "description": "controls the ordering of operations on buffer variables issued by a single shader invocation"
+    },
+    "memoryBarrierImage": {
+      "description": "controls the ordering of operations on image variables issued by a single shader invocation"
+    },
+    "memoryBarrierShared": {
+      "description": "controls the ordering of operations on shared variables issued by a single shader invocation"
+    },
+    "min": {
+      "description": "return the lesser of two values"
+    },
+    "mix": {
+      "description": "linearly interpolate between two values"
+    },
+    "mod": {
+      "description": "compute value of one parameter modulo another"
+    },
+    "modf": {
+      "description": "separate a value into its integer and fractional components"
+    },
+    "normalize": {
+      "description": "calculates the unit vector in the same direction as the original vector"
+    },
+    "not": {
+      "description": "logically invert a boolean vector"
+    },
+    "notEqual": {
+      "description": "perform a component-wise not-equal-to comparison of two vectors"
+    },
+    "outerProduct": {
+      "description": "calculate the outer product of a pair of vectors"
+    },
+    "packHalf2x16": {
+      "description": "convert two 32-bit floating-point quantities to 16-bit quantities and pack them into a single 32-bit integer"
+    },
+    "packUnorm2x16,packSnorm2x16,packUnorm4x8,packSnorm4x8": {
+      "description": "pack floating-point values into an unsigned integer"
+    },
+    "pow": {
+      "description": "return the value of the first parameter raised to the power of the second"
+    },
+    "radians": {
+      "description": "convert a quantity in degrees to radians"
+    },
+    "reflect": {
+      "description": "calculate the reflection direction for an incident vector"
+    },
+    "refract": {
+      "description": "calculate the refraction direction for an incident vector"
+    },
+    "round": {
+      "description": "find the nearest integer to the parameter"
+    },
+    "roundEven": {
+      "description": "find the nearest even integer to the parameter"
+    },
+    "sign": {
+      "description": "extract the sign of the parameter"
+    },
+    "sin": {
+      "description": "return the sine of the parameter"
+    },
+    "sinh": {
+      "description": "return the hyperbolic sine of the parameter"
+    },
+    "smoothstep": {
+      "description": "perform Hermite interpolation between two values"
+    },
+    "sqrt": {
+      "description": "return the square root of the parameter"
+    },
+    "step": {
+      "description": "generate a step function by comparing two values"
+    },
+    "tan": {
+      "description": "return the tangent of the parameter"
+    },
+    "tanh": {
+      "description": "return the hyperbolic tangent of the parameter"
+    },
+    "texelFetch": {
+      "description": "perform a lookup of a single texel within a texture"
+    },
+    "texelFetchOffset": {
+      "description": "perform a lookup of a single texel within a texture with an offset"
+    },
+    "texture": {
+      "description": "retrieves texels from a texture"
+    },
+    "textureGather": {
+      "description": "gathers four texels from a texture"
+    },
+    "textureGatherOffset": {
+      "description": "gathers four texels from a texture with offset"
+    },
+    "textureGatherOffsets": {
+      "description": "gathers four texels from a texture with an array of offsets"
+    },
+    "textureGrad": {
+      "description": "perform a texture lookup with explicit gradients"
+    },
+    "textureGradOffset": {
+      "description": "perform a texture lookup with explicit gradients and offset"
+    },
+    "textureLod": {
+      "description": "perform a texture lookup with explicit level-of-detail"
+    },
+    "textureLodOffset": {
+      "description": "perform a texture lookup with explicit level-of-detail and offset"
+    },
+    "textureOffset": {
+      "description": "perform a texture lookup with offset"
+    },
+    "textureProj": {
+      "description": "perform a texture lookup with projection"
+    },
+    "textureProjGrad": {
+      "description": "perform a texture lookup with projection and explicit gradients"
+    },
+    "textureProjGradOffset": {
+      "description": "perform a texture lookup with projection, explicit gradients and offset"
+    },
+    "textureProjLod": {
+      "description": "perform a texture lookup with projection and explicit level-of-detail"
+    },
+    "textureProjLodOffset": {
+      "description": "perform a texture lookup with projection and explicit level-of-detail and offset"
+    },
+    "textureProjOffset": {
+      "description": "perform a texture lookup with projection and offset"
+    },
+    "textureSize": {
+      "description": "retrieve the dimensions of a level of a texture"
+    },
+    "transpose": {
+      "description": "calculate the transpose of a matrix"
+    },
+    "trunc": {
+      "description": "find the truncated value of the parameter"
+    },
+    "uaddCarry": {
+      "description": "add unsigned integers and generate carry"
+    },
+    "umulExtended": {
+      "description": "perform a 32- by 32-bit multiply to produce a 64-bit result"
+    },
+    "unpackHalf2x16": {
+      "description": "convert two 16-bit floating-point values packed into a single 32-bit integer into a vector of two 32-bit floating-point quantities"
+    },
+    "unpackUnorm2x16,unpackSnorm2x16,unpackUnorm4x8,unpackSnorm4x8": {
+      "description": "unpack floating-point values from an unsigned integer"
+    },
+    "usubBorrow": {
+      "description": "subtract unsigned integers and generate borrow"
+    }
+  }
+}
