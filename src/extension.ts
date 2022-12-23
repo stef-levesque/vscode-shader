@@ -110,7 +110,6 @@ export async function activate(context: vscode.ExtensionContext) {
     context.subscriptions.push(vscode.languages.registerImplementationProvider(HLSLdocumentSelector, HLSLdefinitionProvider));
     context.subscriptions.push(vscode.languages.registerTypeDefinitionProvider(HLSLdocumentSelector, HLSLdefinitionProvider));
 
-
     if (vscode.extensions.getExtension('ms-vscode.cpptools') !== undefined) {
         let formatingProvider = new HLSLFormatingProvider();
         context.subscriptions.push(vscode.languages.registerDocumentFormattingEditProvider(HLSLdocumentSelector, formatingProvider));
