@@ -56,13 +56,10 @@ export class GLSLSemanticProvider implements DocumentSemanticTokensProvider {
     private parseText(text: string): IParsedToken[] {
         const r: IParsedToken[] = [];
 
-        const structs = text.split('struct').slice(1).map(struct => {
-            let structName = struct.split('{')[0]?.trim();
-            if (structName.length == 0) {
-                structName = struct.split('}')[1]?.split(';')[0]?.trim();
-            }
-            return structName;
-        }).filter(structName => structName && this.isVaidStructName(structName));
+        const structDefRegex = /\bstruct\b( |\n)+[A-z|a-z|0-9|_]+/g;
+        const structs = text.match(structDefRegex).map(struct =>
+            struct?.replace(/\bstruct\b( |\n)+/, '')
+        ).filter(structName => structName && this.isVaidStructName(structName));
 
         const lines = text.split(/\r\n|\r|\n/);
         lines.forEach((line, i) => {
