@@ -70,7 +70,8 @@
 					".glsl",
 					".glslv",
 					".glslf",
-					".glslg"
+					".glslg",
+					".es"
 				],
 				"configuration": "./glsl.configuration.json"
 			},
