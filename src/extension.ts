@@ -53,20 +53,27 @@ function searchRgPath()
         return fs.existsSync( rgExePath ) ? rgExePath : undefined;
     }
 
-    let rgPath = "";
+    const pathsToTest = [
+        "node_modules",
+        "node_modules.asar.unpacked",   // If vscode-ripgrep is in an .asar file, then the binary is unpacked.
+    ];
 
-    rgPath = exePathIsDefined( Path.join( vscode.env.appRoot, "node_modules/vscode-ripgrep/bin/", exeName() ) );
-    if( rgPath ) {
-        return rgPath;
+    // See https://github.com/stef-levesque/vscode-shader/issues/56
+    const extNamesToTest = [
+        "vscode-ripgrep",       // old extension name
+        "@vscode/ripgrep",      // new extension name
+    ];
+
+    for (const path of pathsToTest) {
+        for (const ext of extNamesToTest) {
+            let rgPath = exePathIsDefined( Path.join( vscode.env.appRoot, `${path}/${ext}/bin/`, exeName() ) );
+            if( rgPath ) {
+                return rgPath;
+            }
+        }
     }
 
-    // If vscode-ripgrep is in an .asar file, then the binary is unpacked.
-    rgPath = exePathIsDefined( Path.join( vscode.env.appRoot, "node_modules.asar.unpacked/vscode-ripgrep/bin/", exeName() ) );
-    if( rgPath ) {
-        return rgPath;
-    }
-
-    return rgPath;
+    return undefined;
 }
 
 export async function activate(context: vscode.ExtensionContext) {
